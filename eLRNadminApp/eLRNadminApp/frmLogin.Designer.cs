@@ -96,26 +96,26 @@
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.personalToolStripMenuItem.Text = "Personal";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // permisosToolStripMenuItem
             // 
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
-            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.permisosToolStripMenuItem.Text = "Permisos";
             // 
             // aplicacionesToolStripMenuItem
             // 
             this.aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
-            this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.aplicacionesToolStripMenuItem.Text = "Aplicaciones";
             // 
             // académicoToolStripMenuItem
@@ -130,13 +130,13 @@
             // catedráticosToolStripMenuItem
             // 
             this.catedráticosToolStripMenuItem.Name = "catedráticosToolStripMenuItem";
-            this.catedráticosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.catedráticosToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.catedráticosToolStripMenuItem.Text = "Catedráticos";
             // 
             // alumnosToolStripMenuItem
             // 
             this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
-            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.alumnosToolStripMenuItem.Text = "Alumnos";
             // 
             // acercaDeToolStripMenuItem
