@@ -40,5 +40,15 @@ namespace eLRNadminApp
             usr_frm.MdiParent = this;
             usr_frm.Show();
         }
+
+        private void notasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void publicacionNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

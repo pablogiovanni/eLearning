@@ -42,6 +42,9 @@
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publicacionNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,9 +152,34 @@
             // 
             // notasToolStripMenuItem
             // 
+            this.notasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.publicacionNotasToolStripMenuItem});
             this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
             this.notasToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.notasToolStripMenuItem.Text = "Notas";
+            this.notasToolStripMenuItem.Click += new System.EventHandler(this.notasToolStripMenuItem_Click);
+            // 
+            // publicacionNotasToolStripMenuItem
+            // 
+            this.publicacionNotasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ingresoNotasToolStripMenuItem,
+            this.consultarNotasToolStripMenuItem});
+            this.publicacionNotasToolStripMenuItem.Name = "publicacionNotasToolStripMenuItem";
+            this.publicacionNotasToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.publicacionNotasToolStripMenuItem.Text = "Publicacion Notas";
+            this.publicacionNotasToolStripMenuItem.Click += new System.EventHandler(this.publicacionNotasToolStripMenuItem_Click);
+            // 
+            // ingresoNotasToolStripMenuItem
+            // 
+            this.ingresoNotasToolStripMenuItem.Name = "ingresoNotasToolStripMenuItem";
+            this.ingresoNotasToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.ingresoNotasToolStripMenuItem.Text = "Ingreso Notas";
+            // 
+            // consultarNotasToolStripMenuItem
+            // 
+            this.consultarNotasToolStripMenuItem.Name = "consultarNotasToolStripMenuItem";
+            this.consultarNotasToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.consultarNotasToolStripMenuItem.Text = "Consultar Notas";
             // 
             // frm_init
             // 
@@ -188,6 +216,9 @@
         private System.Windows.Forms.ToolStripMenuItem alumnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem publicacionNotasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ingresoNotasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarNotasToolStripMenuItem;
     }
 }
 
