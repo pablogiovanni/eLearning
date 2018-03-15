@@ -98,6 +98,7 @@
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
             this.personalToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.personalToolStripMenuItem.Text = "Personal";
+            this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -132,12 +133,14 @@
             this.catedráticosToolStripMenuItem.Name = "catedráticosToolStripMenuItem";
             this.catedráticosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.catedráticosToolStripMenuItem.Text = "Catedráticos";
+            this.catedráticosToolStripMenuItem.Click += new System.EventHandler(this.catedráticosToolStripMenuItem_Click);
             // 
             // alumnosToolStripMenuItem
             // 
             this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
             this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.alumnosToolStripMenuItem.Text = "Alumnos";
+            this.alumnosToolStripMenuItem.Click += new System.EventHandler(this.alumnosToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -153,7 +156,7 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frm_init";
             this.Text = "eLearning";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

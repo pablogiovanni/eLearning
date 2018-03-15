@@ -13,5 +13,6 @@ namespace eLRNadminApp.Objeto
         public static int idPLogin { set; get; } //Id de persona en tabla persona_reg
         public static string regPLogin { set; get; } //Tipo registro en tabla de persona_reg
         public static bool signedIn { set; get; }
+
     }
 }

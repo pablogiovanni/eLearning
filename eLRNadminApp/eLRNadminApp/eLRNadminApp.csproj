@@ -62,8 +62,20 @@
     <Compile Include="Aplicaciones.designer.cs">
       <DependentUpon>Aplicaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCatedratico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCatedratico.Designer.cs">
+      <DependentUpon>frmCatedratico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Controlador\Login.cs" />
+    <Compile Include="frmAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumno.Designer.cs">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,7 @@
     </Compile>
     <Compile Include="Objeto\AclUser.cs" />
     <Compile Include="Objeto\dbAccess.cs" />
+    <Compile Include="Objeto\PaisUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objeto\Common.cs" />
@@ -107,6 +120,12 @@
     </Compile>
     <EmbeddedResource Include="Aplicaciones.resx">
       <DependentUpon>Aplicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCatedratico.resx">
+      <DependentUpon>frmCatedratico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumno.resx">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonal.resx">
       <DependentUpon>frmPersonal.cs</DependentUpon>

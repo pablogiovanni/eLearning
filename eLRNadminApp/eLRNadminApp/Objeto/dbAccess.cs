@@ -15,11 +15,14 @@ namespace eLRNadminApp.Objeto
             try
             {
                 Conexion conn = new Conexion();
-                OdbcCommand cmd = new OdbcCommand(_query, conn.conexion());
+                OdbcConnection connn = conn.conexion(); 
+                OdbcCommand cmd = new OdbcCommand(_query, connn);
                 OdbcDataAdapter odbcAdapter = new OdbcDataAdapter();
                 odbcAdapter.SelectCommand = cmd;
                 DataTable myDataTable = new DataTable();
                 odbcAdapter.Fill(myDataTable);
+                connn.Close();
+                connn.Dispose();
                 return myDataTable;
             }
             catch (Exception ex) { System.Windows.Forms.MessageBox.Show("Error al obtener conjunto de datos.\n" + ex.Message); return null; }

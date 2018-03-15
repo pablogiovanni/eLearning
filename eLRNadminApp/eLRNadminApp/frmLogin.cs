@@ -40,5 +40,31 @@ namespace eLRNadminApp
             usr_frm.MdiParent = this;
             usr_frm.Show();
         }
+
+        private void personalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPersonal frmPrn = new frmPersonal();
+            frmPrn.MdiParent = this;
+            frmPrn.Show();
+        }
+
+        private void alumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAlumno frmAlu = new frmAlumno();
+            frmAlu.MdiParent = this;
+            frmAlu.Show();
+        }
+
+        private void catedráticosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCatedratico frmCat = new frmCatedratico();
+            frmCat.MdiParent = this;
+            frmCat.Show();
+        }
     }
 }
