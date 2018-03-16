@@ -38,3 +38,6 @@ C:\Users\usuario\Documents\Visual Studio 2015\Projects\2018\eLRNadminApp\eLRNadm
 C:\Users\usuario\Documents\Visual Studio 2015\Projects\2018\eLRNadminApp\eLRNadminApp\bin\Debug\MySql.Data.xml
 C:\Users\usuario\Documents\Visual Studio 2015\Projects\2018\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmCatedratico.resources
 C:\Users\usuario\Documents\Visual Studio 2015\Projects\2018\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmAlumno.resources
+C:\Users\melvi\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\eLRNadminApp.exe.config
+C:\Users\melvi\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.exe
+C:\Users\melvi\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.pdb
