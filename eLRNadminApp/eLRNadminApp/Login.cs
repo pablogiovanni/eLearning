@@ -50,7 +50,7 @@ namespace eLRNadminApp
                     id = Convert.ToInt32(id_usuario);
                     Globales.id_usuario = (int)dr["id_usuario"];
                     Objeto.Common.idPLogin = (int)dr[1];
-                    Objeto.Common.idPLogin = (int)dr[2];
+                    Objeto.Common.regPLogin = (string)dr[2];
                 }
                 dr.Close();
 

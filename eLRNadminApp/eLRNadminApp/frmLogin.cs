@@ -17,6 +17,7 @@ namespace eLRNadminApp
         {
             InitializeComponent();
             cerrarSesiónToolStripMenuItem.Enabled = false;
+            blockMenu();
         }
 
         private void iniciarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -25,13 +26,15 @@ namespace eLRNadminApp
             login_frm.MdiParent = this;
             login_frm.Show();
             cerrarSesiónToolStripMenuItem.Enabled = true;
-            iniciarSesiónToolStripMenuItem.Enabled = false;     
+            iniciarSesiónToolStripMenuItem.Enabled = false;
+            unblockMenu();  
         }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cerrarSesiónToolStripMenuItem.Enabled = false;
             iniciarSesiónToolStripMenuItem.Enabled = true;
+            blockMenu();
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +68,25 @@ namespace eLRNadminApp
             frmCatedratico frmCat = new frmCatedratico();
             frmCat.MdiParent = this;
             frmCat.Show();
+        }
+
+        public void blockMenu()
+        {
+            this.administrativoToolStripMenuItem.Enabled = false;
+            this.académicoToolStripMenuItem.Enabled = false;
+        }
+
+        public void unblockMenu()
+        {
+            this.administrativoToolStripMenuItem.Enabled = true;
+            this.académicoToolStripMenuItem.Enabled = true;
+        }
+
+        private void aplicacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_MantenimientoApp frmApp = new Frm_MantenimientoApp();
+            frmApp.MdiParent = this;
+            frmApp.Show();
         }
     }
 }

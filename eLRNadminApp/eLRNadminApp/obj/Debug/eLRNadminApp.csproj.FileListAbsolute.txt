@@ -38,3 +38,23 @@ C:\Users\usuario\Documents\Visual Studio 2015\Projects\2018\eLRNadminApp\eLRNadm
 C:\Users\usuario\Documents\Visual Studio 2015\Projects\2018\eLRNadminApp\eLRNadminApp\bin\Debug\MySql.Data.xml
 C:\Users\usuario\Documents\Visual Studio 2015\Projects\2018\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmCatedratico.resources
 C:\Users\usuario\Documents\Visual Studio 2015\Projects\2018\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmAlumno.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\eLRNadminApp.exe.config
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.exe
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.pdb
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.Aplicaciones2.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmCatedratico.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmAlumno.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmPersonal.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frm_init.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.Login.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.login2.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.Frm_MantenimientoApp.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\Navegador.Navegador.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.Properties.Resources.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.Usuarios.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.csproj.GenerateResource.Cache
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\eLRNadminApp.exe
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\eLRNadminApp.pdb
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\MySql.Data.dll
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\MySql.Data.xml
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.csprojResolveAssemblyReference.cache
