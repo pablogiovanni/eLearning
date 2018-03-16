@@ -40,12 +40,9 @@
             this.académicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catedráticosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prueba2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hhhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,19 +144,10 @@
             this.alumnosToolStripMenuItem.Text = "Alumnos";
             this.alumnosToolStripMenuItem.Click += new System.EventHandler(this.alumnosToolStripMenuItem_Click);
             // 
-            // acercaDeToolStripMenuItem
-            // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.acercaDeToolStripMenuItem.Text = "AcercaDe";
-            // 
             // cursosToolStripMenuItem
             // 
             this.cursosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.asiToolStripMenuItem,
-            this.pruebaToolStripMenuItem,
-            this.prueba2ToolStripMenuItem,
-            this.hhhToolStripMenuItem});
+            this.asiToolStripMenuItem});
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
             this.cursosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cursosToolStripMenuItem.Text = "Cursos";
@@ -169,24 +157,13 @@
             this.asiToolStripMenuItem.Name = "asiToolStripMenuItem";
             this.asiToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.asiToolStripMenuItem.Text = "Agregar cursos";
+            this.asiToolStripMenuItem.Click += new System.EventHandler(this.asiToolStripMenuItem_Click);
             // 
-            // pruebaToolStripMenuItem
+            // acercaDeToolStripMenuItem
             // 
-            this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.pruebaToolStripMenuItem.Text = "prueba";
-            // 
-            // prueba2ToolStripMenuItem
-            // 
-            this.prueba2ToolStripMenuItem.Name = "prueba2ToolStripMenuItem";
-            this.prueba2ToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.prueba2ToolStripMenuItem.Text = "prueba2";
-            // 
-            // hhhToolStripMenuItem
-            // 
-            this.hhhToolStripMenuItem.Name = "hhhToolStripMenuItem";
-            this.hhhToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.hhhToolStripMenuItem.Text = "hhh";
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.acercaDeToolStripMenuItem.Text = "AcercaDe";
             // 
             // frm_init
             // 
@@ -199,6 +176,7 @@
             this.Name = "frm_init";
             this.Text = "eLearning";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frm_init_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -223,9 +201,6 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pruebaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem prueba2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hhhToolStripMenuItem;
     }
 }
 

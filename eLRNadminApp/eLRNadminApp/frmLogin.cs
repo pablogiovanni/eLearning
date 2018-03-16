@@ -66,5 +66,20 @@ namespace eLRNadminApp
             frmCat.MdiParent = this;
             frmCat.Show();
         }
+
+        private void frm_init_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pruebaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void asiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
