@@ -48,7 +48,24 @@ namespace eLRNadminApp
 
         private void publicacionNotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            actividadesnota frmactividades = new actividadesnota();
+            frmactividades.MdiParent  = this;
+            frmactividades.Show();
 
+        }
+
+        private void ingresarNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ingresonotas frminotas = new ingresonotas();
+            frminotas.MdiParent = this;
+            frminotas.Show();
+        }
+
+        private void estadisticasNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            estadisticasn frmestadisticasnotas = new estadisticasn();
+            frmestadisticasnotas.MdiParent = this;
+            frmestadisticasnotas.Show();
         }
     }
 }

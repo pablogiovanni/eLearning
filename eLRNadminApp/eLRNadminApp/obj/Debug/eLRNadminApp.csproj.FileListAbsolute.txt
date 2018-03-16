@@ -36,3 +36,6 @@ C:\Users\Bryan Portillo\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Deb
 C:\Users\Bryan Portillo\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.Properties.Resources.resources
 C:\Users\Bryan Portillo\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.Usuarios.resources
 C:\Users\Bryan Portillo\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.csproj.GenerateResource.Cache
+C:\Users\Bryan Portillo\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.actividadesnota.resources
+C:\Users\Bryan Portillo\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.ingresonotas.resources
+C:\Users\Bryan Portillo\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.estadisticasn.resources
