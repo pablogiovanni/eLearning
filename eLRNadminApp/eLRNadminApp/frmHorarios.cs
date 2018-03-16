@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace eLRNadminApp
 {
-    public partial class frmAlumno : Form
+    public partial class frmHorarios : Form
     {
-        public frmAlumno()
+        public frmHorarios()
         {
             InitializeComponent();
-        }
-
-        private void navegador1_RecibidorInsertar(object sender, EventArgs e)
-        {
-
         }
     }
 }
