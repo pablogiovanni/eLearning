@@ -237,10 +237,7 @@ namespace eLRNadminApp
                     txtnombre2.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
                     dtP_1.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
                     dtP_2.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
-                    //cmb_dept.SelectedItem = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
-                    //cmb_pais.SelectedItem = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
                     txtDire.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
-                    //cmb_per.SelectedItem = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message+ex.Source); }
