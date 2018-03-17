@@ -1,0 +1,7 @@
+# ignore all .pdb .Cache .cache .exe .suo
+
+eLearning/**/*.pdb
+eLearning/**/*.exe
+eLearning/**/*.cache
+eLearning/**/*.Cache
+eLearning/**/*.suo
