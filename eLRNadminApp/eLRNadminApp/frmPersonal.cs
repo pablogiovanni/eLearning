@@ -243,7 +243,6 @@ namespace eLRNadminApp
             catch (Exception ex) { MessageBox.Show(ex.Message+ex.Source); }
         }
 
-        //public static int edad, idB, idcta, idEmp= 0;
         public frmPersonal()
         {
             InitializeComponent();
