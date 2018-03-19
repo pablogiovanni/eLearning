@@ -79,6 +79,19 @@ namespace eLRNadminApp
 
         private void asiToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            agregarCursos agregarCursos = new agregarCursos();
+            agregarCursos.MdiParent = this;
+            agregarCursos.Show();
+
+        }
+
+        private void académicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

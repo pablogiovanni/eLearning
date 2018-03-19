@@ -45,7 +45,6 @@ C:\Users\gontz\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\eLRNad
 C:\Users\gontz\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\eLRNadminApp.pdb
 C:\Users\gontz\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\MySql.Data.dll
 C:\Users\gontz\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\MySql.Data.xml
-C:\Users\gontz\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\bin\Debug\Navegador.pdb
 C:\Users\gontz\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.csprojResolveAssemblyReference.cache
 C:\Users\gontz\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.agregarCursos.resources
 C:\Users\gontz\Source\Repos\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.Aplicaciones2.resources

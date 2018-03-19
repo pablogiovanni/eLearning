@@ -129,6 +129,7 @@
             this.académicoToolStripMenuItem.Name = "académicoToolStripMenuItem";
             this.académicoToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.académicoToolStripMenuItem.Text = "Académico";
+            this.académicoToolStripMenuItem.Click += new System.EventHandler(this.académicoToolStripMenuItem_Click);
             // 
             // catedráticosToolStripMenuItem
             // 
@@ -151,6 +152,7 @@
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
             this.cursosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cursosToolStripMenuItem.Text = "Cursos";
+            this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
             // asiToolStripMenuItem
             // 
