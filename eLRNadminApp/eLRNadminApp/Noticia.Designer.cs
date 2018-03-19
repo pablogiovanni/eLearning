@@ -100,7 +100,7 @@
             // 
             // txt_descripcion
             // 
-            this.txt_descripcion.Location = new System.Drawing.Point(130, 94);
+            this.txt_descripcion.Location = new System.Drawing.Point(159, 98);
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(553, 109);
