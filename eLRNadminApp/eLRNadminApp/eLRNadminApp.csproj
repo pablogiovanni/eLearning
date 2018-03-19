@@ -62,6 +62,12 @@
     <Compile Include="Aplicaciones.designer.cs">
       <DependentUpon>Aplicaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Encuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encuesta.Designer.cs">
+      <DependentUpon>Encuesta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCatedratico.cs">
       <SubType>Form</SubType>
     </Compile>
