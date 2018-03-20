@@ -18,7 +18,7 @@ namespace eLRNadminApp
 
         private void cmb_dept_SelectedValueChanged(object sender, EventArgs e)
         {
-            System.Windows.Forms.MessageBox.Show(cmb_per.SelectedItem.ToString());
+            //System.Windows.Forms.MessageBox.Show(cmb_per.SelectedItem.ToString());
             try
             {
                 foreach (Objeto.Departamentos dept in lDept)
@@ -37,7 +37,7 @@ namespace eLRNadminApp
 
         private void cmb_per_SelectedValueChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(cmb_per.SelectedItem.ToString());
+            //MessageBox.Show(cmb_per.SelectedItem.ToString());
             try
             {
                 foreach (Objeto.TipoPersonal tpersona in ltpPer)
@@ -63,7 +63,7 @@ namespace eLRNadminApp
 
         private void cmb_pais_SelectedValueChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(cmb_pais.SelectedItem.ToString());
+            //MessageBox.Show(cmb_pais.SelectedItem.ToString());
             try
             { 
                 Objeto.PaisUser auxPais = new Objeto.PaisUser(0, cmb_pais.SelectedItem.ToString());
@@ -238,6 +238,7 @@ namespace eLRNadminApp
                     dtP_1.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
                     dtP_2.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
                     txtDire.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+                    getNumAndEmail();
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message+ex.Source); }
@@ -259,5 +260,27 @@ namespace eLRNadminApp
             txt_area.Enabled = false;
             txt_num.Enabled = false;
         }
+
+        private void getNumAndEmail()
+        {
+            if( !(string.IsNullOrEmpty(lbl_perid.Text)) && !(lbl_perid.Text.Equals("-")) ){
+
+                //ComboBox con los correos del personal
+
+                string qString = @"SELECT m.id_email FROM email_reg as m where concat(m.reg_id_reg, m.reg_id_per) = '" + lbl_perid.Text + "' ";
+                DataTable dt = Objeto.dbAccess.selectQ(qString);
+                dt = Objeto.dbAccess.selectQ(qString);
+                foreach (DataRow row in dt.Rows)
+                {
+                    Objeto.Email emailobj = new Objeto.Email((string)row[0]);
+                    lEmail.Add(emailobj);
+                }
+                foreach (Objeto.Email objEmail in lEmail)
+                {
+                    cmb_email.Items.Add(objEmail.IdEmail);
+
+                }
+            }
+        } 
     }
 }

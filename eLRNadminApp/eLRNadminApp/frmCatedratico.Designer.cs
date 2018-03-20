@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.navegador1 = new Navegador.Navegador();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cmb_pais = new System.Windows.Forms.ComboBox();
             this.cmb_per = new System.Windows.Forms.ComboBox();
             this.cmb_dept = new System.Windows.Forms.ComboBox();
@@ -68,14 +67,6 @@
             this.navegador1.sServidor = null;
             this.navegador1.sUsuario = null;
             this.navegador1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(925, 306);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 86;
             // 
             // cmb_pais
             // 
@@ -279,13 +270,12 @@
             this.textBox1.Size = new System.Drawing.Size(181, 22);
             this.textBox1.TabIndex = 88;
             // 
-            // Catedratico
+            // frmCatedratico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1466, 603);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cmb_pais);
             this.Controls.Add(this.cmb_per);
             this.Controls.Add(this.cmb_dept);
@@ -308,7 +298,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.navegador1);
-            this.Name = "Catedratico";
+            this.Name = "frmCatedratico";
             this.Text = "Catedratico";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -319,7 +309,6 @@
         #endregion
 
         private Navegador.Navegador navegador1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox cmb_pais;
         private System.Windows.Forms.ComboBox cmb_per;
         private System.Windows.Forms.ComboBox cmb_dept;
