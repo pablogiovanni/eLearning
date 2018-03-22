@@ -13,6 +13,17 @@ namespace eLRNadminApp
 {
     public partial class frm_init : Form
     {
+        private List<Objeto.AclUser> loginLacl = null;
+
+        public void setAclList(List<Objeto.AclUser> auxList)
+        {
+            if (Objeto.Common.signedIn)
+            {
+                this.loginLacl = auxList;
+            }
+            this.loginLacl = null;
+        }
+
         public frm_init()
         {
             InitializeComponent();
@@ -35,6 +46,7 @@ namespace eLRNadminApp
             cerrarSesiónToolStripMenuItem.Enabled = false;
             iniciarSesiónToolStripMenuItem.Enabled = true;
             blockMenu();
+            clearPermissions();
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,11 +94,34 @@ namespace eLRNadminApp
             this.académicoToolStripMenuItem.Enabled = true;
         }
 
+        private void clearPermissions()
+        {
+            Objeto.Common.signedIn = false;
+            Objeto.Common.idPLogin = 0;
+            Objeto.Common.regPLogin = "";
+            Objeto.Common.usrLogin = "";
+        }
+
         private void aplicacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Aplicaciones2 frmApp = new Aplicaciones2();
+            frmApp.MdiParent = this;
+            frmApp.Show();
+        }
+
+        private void permisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_MantenimientoApp frmApp = new Frm_MantenimientoApp();
             frmApp.MdiParent = this;
             frmApp.Show();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach(Objeto.AclUser acl in loginLacl)
+            {
+                MessageBox.Show(acl.ModuloID + acl.ModuloNombre);
+            }
         }
     }
 }

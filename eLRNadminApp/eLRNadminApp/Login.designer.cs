@@ -37,6 +37,7 @@
             this.txt_contraseña = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.pb_logoUsuario = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logoUsuario)).BeginInit();
@@ -45,8 +46,8 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(257, 267);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(257, 231);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(32, 27);
             this.pictureBox3.TabIndex = 23;
@@ -55,8 +56,8 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(257, 224);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(257, 188);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 27);
             this.pictureBox2.TabIndex = 22;
@@ -65,7 +66,7 @@
             // btn_Entrar
             // 
             this.btn_Entrar.Location = new System.Drawing.Point(309, 318);
-            this.btn_Entrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Entrar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Entrar.Name = "btn_Entrar";
             this.btn_Entrar.Size = new System.Drawing.Size(103, 34);
             this.btn_Entrar.TabIndex = 21;
@@ -77,7 +78,7 @@
             // 
             this.lbl_contraseña.AutoSize = true;
             this.lbl_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_contraseña.Location = new System.Drawing.Point(97, 267);
+            this.lbl_contraseña.Location = new System.Drawing.Point(97, 231);
             this.lbl_contraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_contraseña.Name = "lbl_contraseña";
             this.lbl_contraseña.Size = new System.Drawing.Size(124, 25);
@@ -88,7 +89,7 @@
             // 
             this.lbl_usuario.AutoSize = true;
             this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usuario.Location = new System.Drawing.Point(97, 224);
+            this.lbl_usuario.Location = new System.Drawing.Point(97, 188);
             this.lbl_usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_usuario.Name = "lbl_usuario";
             this.lbl_usuario.Size = new System.Drawing.Size(79, 25);
@@ -98,8 +99,8 @@
             // txt_contraseña
             // 
             this.txt_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_contraseña.Location = new System.Drawing.Point(287, 267);
-            this.txt_contraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_contraseña.Location = new System.Drawing.Point(287, 231);
+            this.txt_contraseña.Margin = new System.Windows.Forms.Padding(4);
             this.txt_contraseña.Name = "txt_contraseña";
             this.txt_contraseña.PasswordChar = '*';
             this.txt_contraseña.Size = new System.Drawing.Size(172, 26);
@@ -108,8 +109,8 @@
             // txt_usuario
             // 
             this.txt_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_usuario.Location = new System.Drawing.Point(287, 224);
-            this.txt_usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_usuario.Location = new System.Drawing.Point(287, 188);
+            this.txt_usuario.Margin = new System.Windows.Forms.Padding(4);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(172, 26);
             this.txt_usuario.TabIndex = 17;
@@ -118,12 +119,20 @@
             // 
             this.pb_logoUsuario.BackColor = System.Drawing.Color.White;
             this.pb_logoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("pb_logoUsuario.Image")));
-            this.pb_logoUsuario.Location = new System.Drawing.Point(277, 32);
-            this.pb_logoUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_logoUsuario.Location = new System.Drawing.Point(277, 8);
+            this.pb_logoUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.pb_logoUsuario.Name = "pb_logoUsuario";
             this.pb_logoUsuario.Size = new System.Drawing.Size(171, 161);
             this.pb_logoUsuario.TabIndex = 16;
             this.pb_logoUsuario.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(257, 265);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 24;
             // 
             // Login
             // 
@@ -131,6 +140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(693, 411);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btn_Entrar);
@@ -139,7 +149,7 @@
             this.Controls.Add(this.txt_contraseña);
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.pb_logoUsuario);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -162,5 +172,6 @@
         private System.Windows.Forms.TextBox txt_contraseña;
         private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.PictureBox pb_logoUsuario;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

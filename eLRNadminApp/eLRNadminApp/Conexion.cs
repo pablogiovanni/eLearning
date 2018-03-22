@@ -30,5 +30,39 @@ namespace eLRNadminApp
                 return false;
             }
         }
+
+        public OdbcConnection profileConnection(string tipoAux)
+        {
+            try
+            {
+                OdbcConnection con = null;
+                if (!(string.IsNullOrEmpty(tipoAux)))
+                {
+                    switch (tipoAux)
+                    {
+                        case "Administrativo":
+                            con = new OdbcConnection("Driver={MySQL ODBC 3.51 Driver}; SERVER=127.0.0.1; DATABASE=elearningdb; UID=elearn; PASSWORD=$ele@rn$;");
+                            con.Open();
+                            break;
+                        case "Operativo":
+                            con = new OdbcConnection("Driver={MySQL ODBC 3.51 Driver}; SERVER=127.0.0.1; DATABASE=elearningdb; UID=opert; PASSWORD=$0pert$;");
+                            break;
+                        case "Catedratico":
+                            con = new OdbcConnection("Driver={MySQL ODBC 3.51 Driver}; SERVER=127.0.0.1; DATABASE=elearningdb; UID=cat; PASSWORD=$c@t$");
+                            break;
+                        case "Alumno":
+                            con = new OdbcConnection("Driver={MySQL ODBC 3.51 Driver}; SERVER=127.0.0.1; DATABASE=elearningdb; UID=almn; PASSWORD=$@lmn$");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else { return null; }
+
+                return con;
+            }
+            catch (Exception ex) { System.Windows.Forms.MessageBox.Show(ex.Message); return null; }
+        }
+
     }
 }

@@ -154,7 +154,6 @@ namespace eLRNadminApp
 
         private void txt_aplicacion_KeyUp(object sender, KeyEventArgs e)
         {
-            conn.Open();
             OdbcCommand cmd = conn.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
@@ -166,8 +165,7 @@ namespace eLRNadminApp
 
             da.Fill(dt);
             dgv_aplicacion.DataSource = dt;
-
-            conn.Close();
+            
         }
 
         private void txt_aplicacion_descripcion_TextChanged(object sender, EventArgs e)
@@ -177,7 +175,6 @@ namespace eLRNadminApp
 
         private void txt_aplicacion_descripcion_KeyUp(object sender, KeyEventArgs e)
         {
-            conn.Open();
             OdbcCommand cmd = conn.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
@@ -189,14 +186,10 @@ namespace eLRNadminApp
 
             da.Fill(dt);
             dgv_aplicacion.DataSource = dt;
-
-            conn.Close();
-
         }
 
         private void txt_no_reporte_KeyUp(object sender, KeyEventArgs e)
         {
-            conn.Open();
             OdbcCommand cmd = conn.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
@@ -208,8 +201,7 @@ namespace eLRNadminApp
 
             da.Fill(dt);
             dgv_aplicacion.DataSource = dt;
-
-            conn.Close();
+            
         }
 
         private void Pnl_botones_Paint(object sender, PaintEventArgs e)

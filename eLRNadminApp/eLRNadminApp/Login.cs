@@ -15,11 +15,16 @@ namespace eLRNadminApp
     {
         OdbcCommand com;
         OdbcDataReader dr;
-        Conexion con = new Conexion();
+        Conexion con =  new Conexion();
         
         public Login()
         {
             InitializeComponent();         
+        }
+
+        private void setDBUserProfile(int auxId)
+        {
+
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -60,6 +65,10 @@ namespace eLRNadminApp
                     Objeto.Common.usrLogin = Globales.nom_usuario;
                     //this.Hide();
                     MessageBox.Show("Binvenido " + Globales.nom_usuario + " ID: " + Globales.id_usuario, "Login");
+                    List<Objeto.AclUser> lACL = new List<Objeto.AclUser>();
+                    Objeto.AclUser acl = new Objeto.AclUser(1, "prueba");
+                    lACL.Add(acl);
+                    
                     this.Close();
                     this.Dispose();
                 }
@@ -73,6 +82,7 @@ namespace eLRNadminApp
                     Globales.id_usuario = 0;
                     Objeto.Common.idPLogin = 0;
                     Objeto.Common.regPLogin = "";
+                    
                 }
             }
             catch (Exception ex)
