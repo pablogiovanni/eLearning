@@ -49,14 +49,16 @@
             this.cmb_pais = new System.Windows.Forms.ComboBox();
             this.lbl_perid = new System.Windows.Forms.Label();
             this.grpB1 = new System.Windows.Forms.GroupBox();
+            this.rbtn_second = new System.Windows.Forms.RadioButton();
+            this.cmb_num = new System.Windows.Forms.ComboBox();
             this.txt_num = new System.Windows.Forms.TextBox();
             this.txt_area = new System.Windows.Forms.TextBox();
-            this.btn_tel = new System.Windows.Forms.Button();
             this.grpB2 = new System.Windows.Forms.GroupBox();
-            this.txt_email = new System.Windows.Forms.TextBox();
-            this.btn_email = new System.Windows.Forms.Button();
-            this.cmb_num = new System.Windows.Forms.ComboBox();
+            this.rbtn_third = new System.Windows.Forms.RadioButton();
             this.cmb_email = new System.Windows.Forms.ComboBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.rbtn_first = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpB1.SuspendLayout();
             this.grpB2.SuspendLayout();
@@ -200,6 +202,10 @@
             this.navegador1.sUsuario = null;
             this.navegador1.TabIndex = 33;
             this.navegador1.RecibidorInsertar += new System.EventHandler(this.navegador1_RecibidorInsertar);
+            this.navegador1.RecibidorActualizar += new System.EventHandler(this.navegador1_RecibidorActualizar);
+            this.navegador1.RecibidorEliminar += new System.EventHandler(this.navegador1_RecibidorEliminar);
+            this.navegador1.RecibidorSiguiente += new System.EventHandler(this.navegador1_RecibidorSiguiente);
+            this.navegador1.RecibidorAnterior += new System.EventHandler(this.navegador1_RecibidorAnterior);
             // 
             // dtP_1
             // 
@@ -259,10 +265,10 @@
             // 
             // grpB1
             // 
+            this.grpB1.Controls.Add(this.rbtn_second);
             this.grpB1.Controls.Add(this.cmb_num);
             this.grpB1.Controls.Add(this.txt_num);
             this.grpB1.Controls.Add(this.txt_area);
-            this.grpB1.Controls.Add(this.btn_tel);
             this.grpB1.Location = new System.Drawing.Point(761, 190);
             this.grpB1.Name = "grpB1";
             this.grpB1.Size = new System.Drawing.Size(329, 148);
@@ -270,56 +276,16 @@
             this.grpB1.TabStop = false;
             this.grpB1.Text = "Número Telefónico";
             // 
-            // txt_num
+            // rbtn_second
             // 
-            this.txt_num.Location = new System.Drawing.Point(139, 60);
-            this.txt_num.Name = "txt_num";
-            this.txt_num.Size = new System.Drawing.Size(184, 22);
-            this.txt_num.TabIndex = 2;
-            // 
-            // txt_area
-            // 
-            this.txt_area.Location = new System.Drawing.Point(6, 60);
-            this.txt_area.Name = "txt_area";
-            this.txt_area.Size = new System.Drawing.Size(100, 22);
-            this.txt_area.TabIndex = 1;
-            // 
-            // btn_tel
-            // 
-            this.btn_tel.Location = new System.Drawing.Point(6, 21);
-            this.btn_tel.Name = "btn_tel";
-            this.btn_tel.Size = new System.Drawing.Size(75, 28);
-            this.btn_tel.TabIndex = 0;
-            this.btn_tel.Text = "Agregar";
-            this.btn_tel.UseVisualStyleBackColor = true;
-            // 
-            // grpB2
-            // 
-            this.grpB2.Controls.Add(this.cmb_email);
-            this.grpB2.Controls.Add(this.txt_email);
-            this.grpB2.Controls.Add(this.btn_email);
-            this.grpB2.Location = new System.Drawing.Point(1127, 190);
-            this.grpB2.Name = "grpB2";
-            this.grpB2.Size = new System.Drawing.Size(329, 148);
-            this.grpB2.TabIndex = 41;
-            this.grpB2.TabStop = false;
-            this.grpB2.Text = "Correo Electrónico";
-            // 
-            // txt_email
-            // 
-            this.txt_email.Location = new System.Drawing.Point(6, 60);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(317, 22);
-            this.txt_email.TabIndex = 3;
-            // 
-            // btn_email
-            // 
-            this.btn_email.Location = new System.Drawing.Point(6, 21);
-            this.btn_email.Name = "btn_email";
-            this.btn_email.Size = new System.Drawing.Size(75, 28);
-            this.btn_email.TabIndex = 0;
-            this.btn_email.Text = "Agregar";
-            this.btn_email.UseVisualStyleBackColor = true;
+            this.rbtn_second.AutoSize = true;
+            this.rbtn_second.Location = new System.Drawing.Point(306, 120);
+            this.rbtn_second.Name = "rbtn_second";
+            this.rbtn_second.Size = new System.Drawing.Size(17, 16);
+            this.rbtn_second.TabIndex = 43;
+            this.rbtn_second.TabStop = true;
+            this.rbtn_second.UseVisualStyleBackColor = true;
+            this.rbtn_second.CheckedChanged += new System.EventHandler(this.rbtn_second_CheckedChanged);
             // 
             // cmb_num
             // 
@@ -330,6 +296,43 @@
             this.cmb_num.Size = new System.Drawing.Size(160, 24);
             this.cmb_num.TabIndex = 42;
             // 
+            // txt_num
+            // 
+            this.txt_num.Location = new System.Drawing.Point(139, 46);
+            this.txt_num.Name = "txt_num";
+            this.txt_num.Size = new System.Drawing.Size(184, 22);
+            this.txt_num.TabIndex = 2;
+            // 
+            // txt_area
+            // 
+            this.txt_area.Location = new System.Drawing.Point(7, 46);
+            this.txt_area.Name = "txt_area";
+            this.txt_area.Size = new System.Drawing.Size(100, 22);
+            this.txt_area.TabIndex = 1;
+            // 
+            // grpB2
+            // 
+            this.grpB2.Controls.Add(this.rbtn_third);
+            this.grpB2.Controls.Add(this.cmb_email);
+            this.grpB2.Controls.Add(this.txt_email);
+            this.grpB2.Location = new System.Drawing.Point(1127, 190);
+            this.grpB2.Name = "grpB2";
+            this.grpB2.Size = new System.Drawing.Size(329, 148);
+            this.grpB2.TabIndex = 41;
+            this.grpB2.TabStop = false;
+            this.grpB2.Text = "Correo Electrónico";
+            // 
+            // rbtn_third
+            // 
+            this.rbtn_third.AutoSize = true;
+            this.rbtn_third.Location = new System.Drawing.Point(306, 120);
+            this.rbtn_third.Name = "rbtn_third";
+            this.rbtn_third.Size = new System.Drawing.Size(17, 16);
+            this.rbtn_third.TabIndex = 45;
+            this.rbtn_third.TabStop = true;
+            this.rbtn_third.UseVisualStyleBackColor = true;
+            this.rbtn_third.CheckedChanged += new System.EventHandler(this.rbtn_third_CheckedChanged);
+            // 
             // cmb_email
             // 
             this.cmb_email.FormattingEnabled = true;
@@ -339,11 +342,41 @@
             this.cmb_email.Size = new System.Drawing.Size(160, 24);
             this.cmb_email.TabIndex = 43;
             // 
+            // txt_email
+            // 
+            this.txt_email.Location = new System.Drawing.Point(6, 45);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(317, 22);
+            this.txt_email.TabIndex = 3;
+            // 
+            // rbtn_first
+            // 
+            this.rbtn_first.AutoSize = true;
+            this.rbtn_first.Location = new System.Drawing.Point(385, 363);
+            this.rbtn_first.Name = "rbtn_first";
+            this.rbtn_first.Size = new System.Drawing.Size(17, 16);
+            this.rbtn_first.TabIndex = 42;
+            this.rbtn_first.TabStop = true;
+            this.rbtn_first.UseVisualStyleBackColor = true;
+            this.rbtn_first.CheckedChanged += new System.EventHandler(this.rbtn_first_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 382);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 23);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(1472, 617);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.rbtn_first);
             this.Controls.Add(this.grpB2);
             this.Controls.Add(this.grpB1);
             this.Controls.Add(this.lbl_perid);
@@ -403,12 +436,14 @@
         private System.Windows.Forms.Label lbl_perid;
         private System.Windows.Forms.GroupBox grpB1;
         private System.Windows.Forms.GroupBox grpB2;
-        private System.Windows.Forms.Button btn_tel;
-        private System.Windows.Forms.Button btn_email;
         private System.Windows.Forms.TextBox txt_num;
         private System.Windows.Forms.TextBox txt_area;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.ComboBox cmb_num;
         private System.Windows.Forms.ComboBox cmb_email;
+        private System.Windows.Forms.RadioButton rbtn_first;
+        private System.Windows.Forms.RadioButton rbtn_second;
+        private System.Windows.Forms.RadioButton rbtn_third;
+        private System.Windows.Forms.Button button1;
     }
 }

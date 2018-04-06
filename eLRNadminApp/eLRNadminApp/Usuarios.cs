@@ -14,18 +14,25 @@ namespace eLRNadminApp
 {
     public partial class Usuarios : Form
     {
+        private static string nomApp = "Usuarios";
         OdbcCommand com;
         OdbcDataAdapter da;
         DataTable dt;
         OdbcDataReader dr;
         Conexion con = new Conexion();
         public static int id_per = 0;
-        public static int id_reg_per = 0;
-        
+        public static string id_reg_per = "";
+
+        public static string getNomApp()
+        {
+            return nomApp;
+        }
+
         public Usuarios()
         {
             InitializeComponent();
             mostrar_usuario();
+            cargarPersonal();
         }
 
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
@@ -56,7 +63,7 @@ namespace eLRNadminApp
 
         private bool issetId()
         {
-            if( (id_per != 0) && (id_reg_per != 0))
+            if( (id_per != 0) && (!id_reg_per.Equals("")))
             {
                 return true;
             }return false;
@@ -64,7 +71,7 @@ namespace eLRNadminApp
 
         public void cargarPersonal()
         {
-            Dgv_perDisp.DataSource = Objeto.dbAccess.selectQ("select concat(p.id_reg, p.id_per)as ID, p.nom_per as Nombre, p.ape_per as Apellido, p.fecha_creado from personal_reg as p, usuario as u where p.id_per not in(u.per_id)");
+            Dgv_perDisp.DataSource = Objeto.dbAccess.selectQ("select p.id_reg as Código, p.id_per as Id, p.nom_per as Nombre, p.ape_per as Apellido, p.fecha_creado from personal_reg as p");
             Dgv_perDisp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
@@ -131,117 +138,126 @@ namespace eLRNadminApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (Controlador.EvalSec.consultar("Usuario", Objeto.Common.SEC_INGRESAR) == 1)
             {
-                string id_usuario; int id = 0;
-                com = new OdbcCommand("select id_usuario from usuario where usuario ='" + txt_usuario.Text + "' ", con.conexion());
-                dr = com.ExecuteReader();
-                while (dr.Read())
+                try
                 {
-                    id_usuario = dr["id_usuario"].ToString();
-                    id = Convert.ToInt32(id_usuario);
-                }
-                dr.Close();
+                    string id_usuario; int id = 0;
+                    com = new OdbcCommand("select id_usuario from usuario where usuario ='" + txt_usuario.Text + "' ", con.conexion());
+                    dr = com.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        id_usuario = dr["id_usuario"].ToString();
+                        id = Convert.ToInt32(id_usuario);
+                    }
+                    dr.Close();
 
-                if ((id == 0 && txt_confirmacion.Text == txt_contraseña.Text) && issetId())
-                {
-                    com = new OdbcCommand("insert into usuario (usuario,nombre_usuario, apellido_usuario, contrasena, correo_usuario, telefono_usuario, per_id, per_reg_id) values ('" + txt_usuario.Text + "','" + txt_pNombre.Text + "', '" + txt_pApellido.Text + "', AES_ENCRYPT( '" + txt_contraseña.Text + "','password'), '" + txt_correo.Text + "', '" + Convert.ToInt32(txt_telefono.Text) + "', '"+id_reg_per+ "', '" + id_reg_per + "')", con.conexion());
-                    com.ExecuteNonQuery();
-                    mostrar_usuario();
-                    txt_usuario.Text = ""; txt_contraseña.Text = ""; txt_pNombre.Text = ""; txt_pApellido.Text = ""; txt_correo.Text = ""; txt_telefono.Text = "";
-                    MessageBox.Show("Datos Ingresados");
-                    id_reg_per = 0;
-                    id_per = 0;
-                   
-                }
-                else if (txt_confirmacion.Text != txt_contraseña.Text)
-                {
-                    MessageBox.Show("Contraseña no coincide con la Confirmación, Verificar.");
-                }
-                else
-                {
-                    MessageBox.Show("Nombre de Usuario ya existe, ingrese uno distinto.");
-                }
+                    if ((id == 0 && txt_confirmacion.Text == txt_contraseña.Text) && issetId())
+                    {
+                        com = new OdbcCommand("insert into usuario (usuario,nombre_usuario, apellido_usuario, contrasena, correo_usuario, telefono_usuario, per_id, per_reg_id) values ('" + txt_usuario.Text + "','" + txt_pNombre.Text + "', '" + txt_pApellido.Text + "', AES_ENCRYPT( '" + txt_contraseña.Text + "','password'), '" + txt_correo.Text + "', '" + Convert.ToInt32(txt_telefono.Text) + "', '" + id_per + "', '" + id_reg_per + "')", con.conexion());
+                        com.ExecuteNonQuery();
+                        mostrar_usuario();
+                        txt_usuario.Text = ""; txt_contraseña.Text = ""; txt_pNombre.Text = ""; txt_pApellido.Text = ""; txt_correo.Text = ""; txt_telefono.Text = "";
+                        MessageBox.Show("Datos Ingresados");
+                        id_reg_per = "";
+                        id_per = 0;
 
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Datos NO ingresados, verifique la información. ");
-                
+                    }
+                    else if (txt_confirmacion.Text != txt_contraseña.Text)
+                    {
+                        MessageBox.Show("Contraseña no coincide con la Confirmación, Verificar.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nombre de Usuario ya existe, ingrese uno distinto.");
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Datos NO ingresados, verifique la información. " + ex.Message);
+
+                }
             }
         }
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            String error_nuevo = ""; obtenerIP();
-            String app = "6";
-
-            int i =0;
-            try
+            if (Controlador.EvalSec.consultar("Usuario", Objeto.Common.SEC_EDITAR) == 1)
             {
+                String error_nuevo = ""; obtenerIP();
+                String app = "6";
+
+                int i = 0;
                 try
                 {
-                    com = new OdbcCommand("update usuario set usuario='" + txt_usuario.Text + "' where id_usuario=" + Convert.ToInt32(this.var_id), con.conexion());
+                    try
+                    {
+                        com = new OdbcCommand("update usuario set usuario='" + txt_usuario.Text + "' where id_usuario=" + Convert.ToInt32(this.var_id), con.conexion());
+                        com.ExecuteNonQuery();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Usuario EXISTENTE, ingrese uno nuevo");
+                        i = 1;
+                        s_error = "." + ex.Message + ".";
+                        String[] A = s_error.Split(new char[] { '\'' }, StringSplitOptions.RemoveEmptyEntries);
+                        foreach (string p in A)
+                        {
+                            error_nuevo += p;
+                        }
+
+                    }
+
+                    com = new OdbcCommand("update usuario set usuario='" + txt_usuario.Text + "', nombre_usuario='" + txt_pNombre.Text + "', apellido_usuario='" + txt_pApellido.Text + "',correo_usuario ='" + txt_correo.Text + "',telefono_usuario =" + txt_telefono.Text + " where id_usuario=" + Convert.ToInt32(this.var_id), con.conexion());
                     com.ExecuteNonQuery();
-                  
+                    mostrar_usuario();
+                    txt_usuario.Text = ""; txt_pNombre.Text = ""; txt_pApellido.Text = ""; txt_contraseña.Text = ""; txt_correo.Text = ""; txt_telefono.Text = ""; txt_contraseña.Enabled = true;
+                    MessageBox.Show("Datos actualizados.");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Usuario EXISTENTE, ingrese uno nuevo");
-                    i = 1;
-                    s_error = "." + ex.Message + ".";
-                    String[] A = s_error.Split(new char[] { '\'' }, StringSplitOptions.RemoveEmptyEntries);
-                    foreach (string p in A)
+                    if (i == 1)
                     {
-                        error_nuevo += p;
                     }
-                   
-                }
-
-                com = new OdbcCommand("update usuario set usuario='" + txt_usuario.Text + "', nombre_usuario='" + txt_pNombre.Text + "', apellido_usuario='" + txt_pApellido.Text + "',correo_usuario ='" + txt_correo.Text + "',telefono_usuario =" + txt_telefono.Text + " where id_usuario=" + Convert.ToInt32(this.var_id), con.conexion());
-                com.ExecuteNonQuery();
-                mostrar_usuario();
-                txt_usuario.Text = ""; txt_pNombre.Text = ""; txt_pApellido.Text = ""; txt_contraseña.Text = ""; txt_correo.Text = ""; txt_telefono.Text = ""; txt_contraseña.Enabled = true;
-                MessageBox.Show("Datos actualizados.");
-            }
-            catch (Exception ex)
-            {
-                if (i == 1)
-                {
-                }
-                else
-                {
-                    MessageBox.Show("Datos NO actualizados, verifique información.");
+                    else
+                    {
+                        MessageBox.Show("Datos NO actualizados, verifique información.");
+                    }
                 }
             }
         }
 
         private void btn_borrar_Click(object sender, EventArgs e)
         {
-            String error_nuevo = ""; obtenerIP();
-            String app = "6";
-            try
+            if (Controlador.EvalSec.consultar("Usuario", Objeto.Common.SEC_ELIMINAR) == 1)
             {
-                int id = Convert.ToInt32(this.var_id);
-                string eliminar = "delete from usuario where id_usuario = " + id + " ";
-                com = new OdbcCommand(eliminar, con.conexion());
-                com.ExecuteNonQuery();
-                mostrar_usuario();
-                txt_usuario.Text = ""; txt_contraseña.Text = ""; txt_pNombre.Text = ""; txt_pApellido.Text = ""; txt_correo.Text = "";
-                MessageBox.Show("Registro eliminado correctamente");
-              
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Datos NO eliminados.");
-                s_error = "." + ex.Message + ".";
-                String[] A = s_error.Split(new char[] { '\'' }, StringSplitOptions.RemoveEmptyEntries);
-                foreach (string i in A)
+                String error_nuevo = ""; obtenerIP();
+                String app = "6";
+                try
                 {
-                    error_nuevo += i;
+                    int id = Convert.ToInt32(this.var_id);
+                    string eliminar = "delete from usuario where id_usuario = " + id + " ";
+                    com = new OdbcCommand(eliminar, con.conexion());
+                    com.ExecuteNonQuery();
+                    mostrar_usuario();
+                    txt_usuario.Text = ""; txt_contraseña.Text = ""; txt_pNombre.Text = ""; txt_pApellido.Text = ""; txt_correo.Text = "";
+                    MessageBox.Show("Registro eliminado correctamente");
+
                 }
-              
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Datos NO eliminados.");
+                    s_error = "." + ex.Message + ".";
+                    String[] A = s_error.Split(new char[] { '\'' }, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string i in A)
+                    {
+                        error_nuevo += i;
+                    }
+
+                }
             }
         }
 
@@ -347,6 +363,19 @@ namespace eLRNadminApp
             dgv_usuario.DataSource = dt;
 
             con.conexion().Close();
+        }
+
+        private void Dgv_perDisp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = Dgv_perDisp.Rows[e.RowIndex];
+                id_per = Convert.ToInt32(row.Cells[1].Value);
+                id_reg_per = Convert.ToString(row.Cells[0].Value);
+                txt_pNombre.Text = row.Cells[2].Value.ToString();
+                txt_pApellido.Text = row.Cells[3].Value.ToString();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Usuarios"); }
         }
     }
     }

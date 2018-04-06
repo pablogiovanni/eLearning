@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Navegador.Utilidades;
+using eLRNadminApp.Controlador;
 
 namespace Navegador
 {
@@ -18,7 +19,7 @@ namespace Navegador
          * Parametros user control necesarios para una conexion a base de datos MYSQL
          * 
          * **/
-
+        public String sApp { set; get; }
         [Description("Direccion servidor")]
         [Category("ParametrosBD")]
         public String sServidor{ get; set; }
@@ -57,9 +58,41 @@ namespace Navegador
         public Navegador()
         {
             InitializeComponent();
-            btn_actualizar.Enabled = false;
-            btn_eliminar.Enabled = false;
+            initBlock();
+        }
 
+        public void setSecProfile(string app)
+        {
+            sApp = app;
+            if (eLRNadminApp.Controlador.EvalSec.consultar(sApp, eLRNadminApp.Objeto.Common.SEC_EDITAR) == 1)
+            {
+                btn_actualizar.Enabled = true;
+            }
+            if (eLRNadminApp.Controlador.EvalSec.consultar(sApp, eLRNadminApp.Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                btn_primero.Enabled = true;
+                btn_ultimo.Enabled = true;
+                btn_adelante.Enabled = true;
+                btn_atras.Enabled = true;
+            }
+            if (eLRNadminApp.Controlador.EvalSec.consultar(sApp, eLRNadminApp.Objeto.Common.SEC_INGRESAR) == 1)
+            {
+                btn_insertar.Enabled = true;
+            }
+            if (eLRNadminApp.Controlador.EvalSec.consultar(sApp, eLRNadminApp.Objeto.Common.SEC_ELIMINAR) == 1)
+            {
+                btn_eliminar.Enabled = true;
+            }
+            if (eLRNadminApp.Controlador.EvalSec.consultar(sApp, eLRNadminApp.Objeto.Common.SEC_IMPRIMIR) == 1)
+            {
+                btn_imprimir.Enabled = true;
+            }
+        }
+
+        private void initBlock()
+        {
+            btn_eliminar.Enabled = false;
+            btn_actualizar.Enabled = false;
             btn_guardar.Enabled = false;
             btn_adelante.Enabled = false;
             btn_primero.Enabled = false;
@@ -67,6 +100,7 @@ namespace Navegador
             btn_ultimo.Enabled = false;
             btn_imprimir.Enabled = false;
             btn_modificar.Enabled = false;
+            btn_insertar.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -81,10 +115,12 @@ namespace Navegador
 
         private void button1_Click(object sender, EventArgs e)
         {
-            btn_actualizar.Enabled = true;
-            btn_eliminar.Enabled = true;
-            btn_modificar.Enabled = true;
-            btn_guardar.Enabled = true;
+            if (this.RecibidorInsertar != null)
+                this.RecibidorInsertar(this, e);
+            //btn_actualizar.Enabled = true;
+            //btn_eliminar.Enabled = true;
+            //btn_modificar.Enabled = true;
+            //btn_guardar.Enabled = true;
             
         }
 
@@ -194,12 +230,12 @@ namespace Navegador
 
         private void button5_Click(object sender, EventArgs e)
         {
-            btn_adelante.Enabled = true;
-            btn_primero.Enabled = true;
-            btn_atras.Enabled = true;
-            btn_ultimo.Enabled = true;
-            btn_imprimir.Enabled = true;
-            btn_modificar.Enabled = true;
+            //btn_adelante.Enabled = true;
+            //btn_primero.Enabled = true;
+            //btn_atras.Enabled = true;
+            //btn_ultimo.Enabled = true;
+            //btn_imprimir.Enabled = true;
+            //btn_modificar.Enabled = true;
         }
 
         private void btn_primero_Click(object sender, EventArgs e)
@@ -212,7 +248,8 @@ namespace Navegador
 
         private void btn_actualizar_Click(object sender, EventArgs e)
         {
-
+            if (this.RecibidorActualizar != null)
+                this.RecibidorActualizar(this, e);
         }
     }
 }

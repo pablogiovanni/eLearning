@@ -12,9 +12,11 @@ namespace eLRNadminApp
 {
     public partial class frmAlumno : Form
     {
+        private const string nomApp = "Alumno";
         public frmAlumno()
         {
             InitializeComponent();
+            navegador1.setSecProfile(nomApp);
         }
     }
 }

@@ -37,7 +37,6 @@
             this.txt_contraseña = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.pb_logoUsuario = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logoUsuario)).BeginInit();
@@ -117,7 +116,7 @@
             // 
             // pb_logoUsuario
             // 
-            this.pb_logoUsuario.BackColor = System.Drawing.Color.White;
+            this.pb_logoUsuario.BackColor = System.Drawing.Color.Transparent;
             this.pb_logoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("pb_logoUsuario.Image")));
             this.pb_logoUsuario.Location = new System.Drawing.Point(277, 8);
             this.pb_logoUsuario.Margin = new System.Windows.Forms.Padding(4);
@@ -126,21 +125,12 @@
             this.pb_logoUsuario.TabIndex = 16;
             this.pb_logoUsuario.TabStop = false;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(257, 265);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 24;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(693, 411);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btn_Entrar);
@@ -172,6 +162,5 @@
         private System.Windows.Forms.TextBox txt_contraseña;
         private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.PictureBox pb_logoUsuario;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

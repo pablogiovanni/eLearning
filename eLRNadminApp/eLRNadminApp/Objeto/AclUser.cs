@@ -10,11 +10,11 @@ namespace eLRNadminApp.Objeto
     {
         public int ModuloID { get; set; }
         public string ModuloNombre { get; set; }
-        public bool ModuloEscitura { get; set; }
-        public bool ModuloEdicion { get; set; }
-        public bool ModuloeEliminar { get; set; }
-        public bool ModuloeImprimir { get; set; }
-        public bool ModuloConsultar { get; set; }
+        public Int16 ModuloEscitura { get; set; }
+        public Int16 ModuloEdicion { get; set; }
+        public Int16 ModuloeEliminar { get; set; }
+        public Int16 ModuloeImprimir { get; set; }
+        public Int16 ModuloConsultar { get; set; }
 
         public AclUser(int id, string nombre)
         {

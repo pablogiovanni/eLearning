@@ -13,22 +13,22 @@ namespace eLRNadminApp
 {
     public partial class frm_init : Form
     {
-        private List<Objeto.AclUser> loginLacl = null;
-
-        public void setAclList(List<Objeto.AclUser> auxList)
-        {
-            if (Objeto.Common.signedIn)
-            {
-                this.loginLacl = auxList;
-            }
-            this.loginLacl = null;
-        }
-
         public frm_init()
         {
             InitializeComponent();
             cerrarSesiónToolStripMenuItem.Enabled = false;
             blockMenu();
+            clearPermissions();
+            setParams("127.0.0.1", "elearningdb", "", "elearn", "$ele@rn$");
+        }
+
+        private void setParams(string ip, string name, string tablename, string user, string pass)
+        {
+            Objeto.Common.dbName = name;
+            Objeto.Common.dbServerIP = ip;
+            Objeto.Common.dbTableName = tablename;
+            Objeto.Common.dbUser = user;
+            Objeto.Common.dbPass = pass;
         }
 
         private void iniciarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,16 +51,32 @@ namespace eLRNadminApp
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Usuarios usr_frm = new Usuarios();
-            usr_frm.MdiParent = this;
-            usr_frm.Show();
+            if (Controlador.EvalSec.consultar("Usuario", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                Usuarios usr_frm = new Usuarios();
+                usr_frm.MdiParent = this;
+                usr_frm.Show();
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular usuarios!", "E-Learning"); }
         }
 
         private void personalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPersonal frmPrn = new frmPersonal();
-            frmPrn.MdiParent = this;
-            frmPrn.Show();
+            if (Controlador.EvalSec.consultar("Personal", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                try
+                {
+                    if (Objeto.Common.signedIn)
+                    {
+                        frmPersonal frmPrn = new frmPersonal();
+                        frmPrn.MdiParent = this;
+                        frmPrn.Show();
+                    }
+                    else { MessageBox.Show("Identificación de usuario inválida!", "e-Learning"); }
+                }
+                catch (Exception ex) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular el persona!", "E-Learning"); }
         }
 
         private void alumnoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,16 +86,36 @@ namespace eLRNadminApp
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAlumno frmAlu = new frmAlumno();
-            frmAlu.MdiParent = this;
-            frmAlu.Show();
+            if (Controlador.EvalSec.consultar("Alumno", Objeto.Common.SEC_CONSULTAR) == 1) {
+                try
+                {
+                    if (Objeto.Common.signedIn) {
+                        frmAlumno frmAlu = new frmAlumno();
+                        frmAlu.MdiParent = this;
+                        frmAlu.Show();
+                    }
+                }
+                catch (Exception es) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular alumnos!", "E-Learning"); }
         }
 
         private void catedráticosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCatedratico frmCat = new frmCatedratico();
-            frmCat.MdiParent = this;
-            frmCat.Show();
+            if (Controlador.EvalSec.consultar("Catedratico", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                try
+                {
+                    if (Objeto.Common.signedIn)
+                    {
+                        frmCatedratico frmCat = new frmCatedratico();
+                        frmCat.MdiParent = this;
+                        frmCat.Show();
+                    }
+                }
+                catch (Exception ex) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular catedráticos!", "E-Learning"); }
         }
 
         public void blockMenu()
@@ -100,28 +136,60 @@ namespace eLRNadminApp
             Objeto.Common.idPLogin = 0;
             Objeto.Common.regPLogin = "";
             Objeto.Common.usrLogin = "";
+            Globales.id_usuario = 0;
+            Globales.nom_usuario = "";
+            Objeto.Common.setAclList();
+            Controlador.EvalSec.clearACLs();
         }
 
         private void aplicacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Aplicaciones2 frmApp = new Aplicaciones2();
-            frmApp.MdiParent = this;
-            frmApp.Show();
+            if (Controlador.EvalSec.consultar("Aplicacion", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                try
+                {
+                    if (Objeto.Common.signedIn)
+                    {
+                        Aplicaciones2 frmApp = new Aplicaciones2();
+                        frmApp.MdiParent = this;
+                        frmApp.Show();
+                    }
+                }
+                catch (Exception ex) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular aplicaciones!", "E-Learning"); }
         }
 
         private void permisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_MantenimientoApp frmApp = new Frm_MantenimientoApp();
-            frmApp.MdiParent = this;
-            frmApp.Show();
+            if (Controlador.EvalSec.consultar("Permiso", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                try
+                {
+                    if (Objeto.Common.signedIn)
+                    {
+                        Frm_MantenimientoApp frmApp = new Frm_MantenimientoApp();
+                        frmApp.MdiParent = this;
+                        frmApp.Show();
+                    }
+                }catch(Exception ex) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular permisos!", "E-Learning"); }
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach(Objeto.AclUser acl in loginLacl)
+            try
             {
-                MessageBox.Show(acl.ModuloID + acl.ModuloNombre);
-            }
+                List<Objeto.AclUser> list = new List<Objeto.AclUser>();
+                list = Objeto.Common.ListAcl;
+
+                foreach (Objeto.AclUser acl in list)
+                {
+                    MessageBox.Show(acl.ModuloNombre);
+                }
+            }catch(Exception ex) { MessageBox.Show(ex.Message); }
+            Objeto.Common.setAclList();
         }
     }
 }

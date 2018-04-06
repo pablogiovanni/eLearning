@@ -12,9 +12,11 @@ namespace eLRNadminApp
 {
     public partial class frmCatedratico : Form
     {
+        private const string nomApp = "Catedratico";
         public frmCatedratico()
         {
             InitializeComponent();
+            navegador1.setSecProfile(nomApp);
         }
     }
 }

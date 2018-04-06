@@ -62,6 +62,7 @@
     <Compile Include="Aplicaciones.designer.cs">
       <DependentUpon>Aplicaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controlador\EvalSec.cs" />
     <Compile Include="frmCatedratico.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -15,19 +15,43 @@ namespace eLRNadminApp.Objeto
         public static string regPLogin { set; get; } //Tipo registro en tabla de persona_reg
         public static bool signedIn { set; get; }
         public static string tipoPersonal { set; get; }
+        private static List<Objeto.AclUser> acList = new List<AclUser>();
+        public static List<Objeto.AclUser> ListAcl { set; get; }
+        public const int SEC_INGRESAR = 1;
+        public const int SEC_CONSULTAR = 2;
+        public const int SEC_EDITAR = 3;
+        public const int SEC_ELIMINAR = 4;
+        public const int SEC_IMPRIMIR = 5;
 
-        public static bool setPermission()
+        public static string dbTableName { set; get; }
+        public static string dbName { set; get; }
+        public static string dbUser { set; get; }
+        public static string dbPass { set; get; }
+        public static string dbServerIP { set; get; }
+
+        //private static List<Objeto.AclUser> acList;
+
+        public static void setAclList()
         {
-            String sQuery = @"select p.id_aplicacion as ID, a.nombre_aplicacion, u.usuario as Usuario, p.ingresar as Ingresar, p.modificar as Modificar, p.eliminar as Eliminar,
-                p.imprimir as Imprimir, p.consultar as Consultar from usuario as u, aplicacion as a, detalle_aplicacion_derecho as p
-                where p.id_usuario = '"+Globales.id_usuario+"'and p.id_aplicacion = a.id_aplicacion";
-            DataTable dt = dbAccess.selectQ("");
-
-            if(dt.Rows.Count != 0)
+            if (ListAcl != null)
             {
+                ListAcl.Clear();
 
             }
-            return true;
+        }
+
+        public static List<Objeto.AclUser> getAclList()
+        {
+            if (Objeto.Common.signedIn)
+            {
+                return acList;
+            }
+            return null;
+        }
+
+        public static DataTable forUsersInfo(string query)
+        {
+            return null;
         }
     }
 }

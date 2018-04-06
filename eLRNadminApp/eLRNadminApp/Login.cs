@@ -22,11 +22,6 @@ namespace eLRNadminApp
             InitializeComponent();         
         }
 
-        private void setDBUserProfile(int auxId)
-        {
-
-        }
-
         private void Login_Load(object sender, EventArgs e)
         {
             if (con.comprobacionConexion())
@@ -65,12 +60,22 @@ namespace eLRNadminApp
                     Objeto.Common.usrLogin = Globales.nom_usuario;
                     //this.Hide();
                     MessageBox.Show("Binvenido " + Globales.nom_usuario + " ID: " + Globales.id_usuario, "Login");
-                    List<Objeto.AclUser> lACL = new List<Objeto.AclUser>();
-                    Objeto.AclUser acl = new Objeto.AclUser(1, "prueba");
-                    lACL.Add(acl);
-                    
-                    this.Close();
-                    this.Dispose();
+                    //Objeto.Common.setAclList();
+                    Objeto.dbAccess.setDBUserProfile(Globales.id_usuario); //método que establece los permisos para el usuario por medio del id de usuario
+                    List<Objeto.AclUser> aclList; //new List<Objeto.AclUser>();
+                    aclList = Objeto.Common.ListAcl;
+
+                    //if ( (aclList != null) || (aclList.Count != 0) )
+                    //{
+                        //foreach (Objeto.AclUser acls in aclList)
+                        //{
+                      //      MessageBox.Show("ID: "+acls.ModuloID+"Nombre: " +acls.ModuloNombre+" "+"Ingresar: "+acls.ModuloEscitura,"Permisos");
+                    //    }
+                        //MessageBox.Show("No acl entries! from login");
+                    //}
+                    //else { MessageBox.Show("No acl entries!"); }
+                    //this.Close();
+                    this.Dispose(true);
                 }
                 else
                 {

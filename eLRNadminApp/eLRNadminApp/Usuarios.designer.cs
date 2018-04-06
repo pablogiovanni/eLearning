@@ -64,7 +64,7 @@
             // 
             this.dgv_usuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_usuario.Location = new System.Drawing.Point(466, 251);
-            this.dgv_usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_usuario.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_usuario.Name = "dgv_usuario";
             this.dgv_usuario.Size = new System.Drawing.Size(611, 288);
             this.dgv_usuario.TabIndex = 6;
@@ -88,9 +88,9 @@
             this.gpb_usuario.Controls.Add(this.label3);
             this.gpb_usuario.Controls.Add(this.lbl_pNombre);
             this.gpb_usuario.Location = new System.Drawing.Point(13, 251);
-            this.gpb_usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_usuario.Margin = new System.Windows.Forms.Padding(4);
             this.gpb_usuario.Name = "gpb_usuario";
-            this.gpb_usuario.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpb_usuario.Padding = new System.Windows.Forms.Padding(4);
             this.gpb_usuario.Size = new System.Drawing.Size(445, 288);
             this.gpb_usuario.TabIndex = 7;
             this.gpb_usuario.TabStop = false;
@@ -99,7 +99,7 @@
             // txt_confirmacion
             // 
             this.txt_confirmacion.Location = new System.Drawing.Point(187, 166);
-            this.txt_confirmacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_confirmacion.Margin = new System.Windows.Forms.Padding(4);
             this.txt_confirmacion.Name = "txt_confirmacion";
             this.txt_confirmacion.PasswordChar = '*';
             this.txt_confirmacion.Size = new System.Drawing.Size(160, 22);
@@ -118,7 +118,7 @@
             // txt_usuario
             // 
             this.txt_usuario.Location = new System.Drawing.Point(187, 37);
-            this.txt_usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_usuario.Margin = new System.Windows.Forms.Padding(4);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(160, 22);
             this.txt_usuario.TabIndex = 33;
@@ -138,7 +138,7 @@
             // txt_telefono
             // 
             this.txt_telefono.Location = new System.Drawing.Point(187, 233);
-            this.txt_telefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_telefono.Margin = new System.Windows.Forms.Padding(4);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(160, 22);
             this.txt_telefono.TabIndex = 31;
@@ -147,7 +147,7 @@
             // txt_correo
             // 
             this.txt_correo.Location = new System.Drawing.Point(187, 201);
-            this.txt_correo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_correo.Margin = new System.Windows.Forms.Padding(4);
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(160, 22);
             this.txt_correo.TabIndex = 30;
@@ -156,7 +156,7 @@
             // txt_contraseña
             // 
             this.txt_contraseña.Location = new System.Drawing.Point(187, 133);
-            this.txt_contraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_contraseña.Margin = new System.Windows.Forms.Padding(4);
             this.txt_contraseña.Name = "txt_contraseña";
             this.txt_contraseña.PasswordChar = '*';
             this.txt_contraseña.Size = new System.Drawing.Size(160, 22);
@@ -195,7 +195,7 @@
             // txt_pApellido
             // 
             this.txt_pApellido.Location = new System.Drawing.Point(187, 101);
-            this.txt_pApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_pApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pApellido.Name = "txt_pApellido";
             this.txt_pApellido.Size = new System.Drawing.Size(160, 22);
             this.txt_pApellido.TabIndex = 23;
@@ -204,7 +204,7 @@
             // txt_pNombre
             // 
             this.txt_pNombre.Location = new System.Drawing.Point(187, 69);
-            this.txt_pNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_pNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pNombre.Name = "txt_pNombre";
             this.txt_pNombre.Size = new System.Drawing.Size(160, 22);
             this.txt_pNombre.TabIndex = 22;
@@ -241,17 +241,17 @@
             // 
             // Pnl_botones
             // 
-            this.Pnl_botones.BackColor = System.Drawing.Color.LightBlue;
+            this.Pnl_botones.BackColor = System.Drawing.Color.SlateGray;
             this.Pnl_botones.Controls.Add(this.btn_borrar);
             this.Pnl_botones.Controls.Add(this.btn_editar);
             this.Pnl_botones.Controls.Add(this.Lbl_borrar);
             this.Pnl_botones.Controls.Add(this.Lbl_editar);
             this.Pnl_botones.Controls.Add(this.Lbl_guardar);
             this.Pnl_botones.Controls.Add(this.btn_guardar);
-            this.Pnl_botones.Location = new System.Drawing.Point(13, 113);
-            this.Pnl_botones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Pnl_botones.Location = new System.Drawing.Point(13, 62);
+            this.Pnl_botones.Margin = new System.Windows.Forms.Padding(4);
             this.Pnl_botones.Name = "Pnl_botones";
-            this.Pnl_botones.Size = new System.Drawing.Size(377, 130);
+            this.Pnl_botones.Size = new System.Drawing.Size(445, 130);
             this.Pnl_botones.TabIndex = 10;
             // 
             // btn_borrar
@@ -260,7 +260,7 @@
             this.btn_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_borrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_borrar.Image")));
             this.btn_borrar.Location = new System.Drawing.Point(265, 9);
-            this.btn_borrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_borrar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_borrar.Name = "btn_borrar";
             this.btn_borrar.Size = new System.Drawing.Size(87, 80);
             this.btn_borrar.TabIndex = 16;
@@ -273,7 +273,7 @@
             this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_editar.Image")));
             this.btn_editar.Location = new System.Drawing.Point(148, 9);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(87, 80);
             this.btn_editar.TabIndex = 13;
@@ -322,7 +322,7 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
             this.btn_guardar.Location = new System.Drawing.Point(28, 9);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(87, 80);
             this.btn_guardar.TabIndex = 0;
@@ -337,18 +337,19 @@
             this.Dgv_perDisp.Name = "Dgv_perDisp";
             this.Dgv_perDisp.Size = new System.Drawing.Size(611, 170);
             this.Dgv_perDisp.TabIndex = 11;
+            this.Dgv_perDisp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_perDisp_CellContentClick);
             // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightBlue;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(1107, 552);
             this.Controls.Add(this.Dgv_perDisp);
             this.Controls.Add(this.Pnl_botones);
             this.Controls.Add(this.gpb_usuario);
             this.Controls.Add(this.dgv_usuario);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";

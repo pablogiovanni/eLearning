@@ -15,8 +15,14 @@ namespace eLRNadminApp
 {
     public partial class Frm_MantenimientoApp : Form
     {
+        private static string nomApp = "Permisos";
         Conexion con = new Conexion();
         OdbcConnection conn;
+
+        public static string getNomApp()
+        {
+            return nomApp;
+        }
 
         public Frm_MantenimientoApp()
         {
@@ -104,16 +110,18 @@ namespace eLRNadminApp
 
         private void Btn_edit_Click(object sender, EventArgs e)
         {
-            String error_nuevo = ""; obtenerIP();
-            String app = "4";
+            if (Controlador.EvalSec.consultar("Permiso", Objeto.Common.SEC_EDITAR) == 1)
+            {
+                String error_nuevo = ""; obtenerIP();
+                String app = "4";
 
-            edit = 1;
-            desbloqueados();
-            //connection.OpenConnection();
-            //connection.InsertarRegistro("insert into bitacora(id_usuario,fecha_bitacora,hora_bitacora,accion_usuario,id_aplicacion,resultado_bitacora,error_bitacora,ip_pc) values((select U.id_usuario from usuario U where U.usuario ='" + Globales.nom_usuario + "'), sysdate(), now(), '" + Globales.sAccionE + "', '" + app + "','" + Globales.sExitoso + "', '" + Globales.sError + "','" + localIP + "')");
-            //connection.CloseConnection();
+                edit = 1;
+                desbloqueados();
+                //connection.OpenConnection();
+                //connection.InsertarRegistro("insert into bitacora(id_usuario,fecha_bitacora,hora_bitacora,accion_usuario,id_aplicacion,resultado_bitacora,error_bitacora,ip_pc) values((select U.id_usuario from usuario U where U.usuario ='" + Globales.nom_usuario + "'), sysdate(), now(), '" + Globales.sAccionE + "', '" + app + "','" + Globales.sExitoso + "', '" + Globales.sError + "','" + localIP + "')");
+                //connection.CloseConnection();
 
-
+            }
 
         }
 
@@ -121,7 +129,8 @@ namespace eLRNadminApp
         //Ingresa los nuevos privilegios a un usuario
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
-            if (Chb_editar.Checked == true) { M = 1; } else { M = 0; }
+            if (Controlador.EvalSec.consultar("Permiso", Objeto.Common.SEC_INGRESAR) == 1)
+                if (Chb_editar.Checked == true) { M = 1; } else { M = 0; }
             if (Chb_insertar.Checked == true) { I = 1; } else { I = 0; }
             if (Chb_eliminar.Checked == true) { E = 1; } else { E = 0; }
             if (Chb_consultar.Checked == true) { C = 1; } else { C = 0; }
@@ -226,53 +235,56 @@ namespace eLRNadminApp
         //Guarda los cambios que se han hecho en los derechos de un usuario
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            if (Chb_editar.Checked == true) { M = 1; } else { M = 0; }
-            if (Chb_insertar.Checked == true) { I = 1; } else { I = 0; }
-            if (Chb_eliminar.Checked == true) { E = 1; } else { E = 0; }
-            if (Chb_consultar.Checked == true) { C = 1; } else { C = 0; }
-            if (Chb_imprimir.Checked == true) { Im = 1; } else { Im = 0; }
-
-
-            int o, p, q, r, s, t;
-            String error_nuevo = ""; obtenerIP();
-            String app = "4";
-            try
+            if (Controlador.EvalSec.consultar("Permiso", Objeto.Common.SEC_EDITAR) == 1)
             {
-                OdbcCommand cmd1 = new OdbcCommand("update Detalle_aplicacion_derecho set ingresar = " + I + " where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
-                OdbcCommand cmd2 = new OdbcCommand("update Detalle_aplicacion_derecho set modificar = " + M + " where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
-                OdbcCommand cmd3 = new OdbcCommand("update Detalle_aplicacion_derecho set eliminar = " + E + " where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
-                OdbcCommand cmd4 = new OdbcCommand("update Detalle_aplicacion_derecho set imprimir = " + Im + " where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
-                OdbcCommand cmd5 = new OdbcCommand("update Detalle_aplicacion_derecho set consultar = " + C + " where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
+                if (Chb_editar.Checked == true) { M = 1; } else { M = 0; }
+                if (Chb_insertar.Checked == true) { I = 1; } else { I = 0; }
+                if (Chb_eliminar.Checked == true) { E = 1; } else { E = 0; }
+                if (Chb_consultar.Checked == true) { C = 1; } else { C = 0; }
+                if (Chb_imprimir.Checked == true) { Im = 1; } else { Im = 0; }
 
-                o = cmd1.ExecuteNonQuery();
-                p = cmd2.ExecuteNonQuery();
-                q = cmd3.ExecuteNonQuery();
-                r = cmd4.ExecuteNonQuery();
-                s = cmd5.ExecuteNonQuery();
-                //connection.OpenConnection();
-                //connection.InsertarRegistro("insert into bitacora(id_usuario,fecha_bitacora,hora_bitacora,accion_usuario,id_aplicacion,resultado_bitacora,error_bitacora,ip_pc) values((select U.id_usuario from usuario U where U.usuario ='" + Globales.nom_usuario + "'), sysdate(), now(), '" + Globales.sAccionG + "', '" + app + "','" + Globales.sExitoso + "', '" + Globales.sError + "','" + localIP + "')");
-                //connection.CloseConnection();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error" + ex);
-                s_error = "." + ex.Message + ".";
-                String[] A = s_error.Split(new char[] { '\'' }, StringSplitOptions.RemoveEmptyEntries);
-                foreach (string i in A)
+                int o, p, q, r, s, t;
+                String error_nuevo = ""; obtenerIP();
+                String app = "4";
+                try
                 {
-                    error_nuevo += i;
-                }
-                //connection.OpenConnection();
-                //connection.InsertarRegistro("insert into bitacora(id_usuario,fecha_bitacora,hora_bitacora,accion_usuario,id_aplicacion,resultado_bitacora,error_bitacora,ip_pc) values((select U.id_usuario from usuario U where U.usuario ='" + Globales.nom_usuario + "'), sysdate(), now(), '" + Globales.sAccionG + "', '" + app + "','" + Globales.sExitoso_n + "', '" + error_nuevo + "','" + localIP + "')");
-                //connection.CloseConnection();
-            }
-            finally
-            {
-                
-            }
+                    OdbcCommand cmd1 = new OdbcCommand("update Detalle_aplicacion_derecho set ingresar = " + I + " where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
+                    OdbcCommand cmd2 = new OdbcCommand("update Detalle_aplicacion_derecho set modificar = " + M + " where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
+                    OdbcCommand cmd3 = new OdbcCommand("update Detalle_aplicacion_derecho set eliminar = " + E + " where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
+                    OdbcCommand cmd4 = new OdbcCommand("update Detalle_aplicacion_derecho set imprimir = " + Im + " where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
+                    OdbcCommand cmd5 = new OdbcCommand("update Detalle_aplicacion_derecho set consultar = " + C + " where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
 
-            bloqueados();
+                    o = cmd1.ExecuteNonQuery();
+                    p = cmd2.ExecuteNonQuery();
+                    q = cmd3.ExecuteNonQuery();
+                    r = cmd4.ExecuteNonQuery();
+                    s = cmd5.ExecuteNonQuery();
+                    //connection.OpenConnection();
+                    //connection.InsertarRegistro("insert into bitacora(id_usuario,fecha_bitacora,hora_bitacora,accion_usuario,id_aplicacion,resultado_bitacora,error_bitacora,ip_pc) values((select U.id_usuario from usuario U where U.usuario ='" + Globales.nom_usuario + "'), sysdate(), now(), '" + Globales.sAccionG + "', '" + app + "','" + Globales.sExitoso + "', '" + Globales.sError + "','" + localIP + "')");
+                    //connection.CloseConnection();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex);
+                    s_error = "." + ex.Message + ".";
+                    String[] A = s_error.Split(new char[] { '\'' }, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string i in A)
+                    {
+                        error_nuevo += i;
+                    }
+                    //connection.OpenConnection();
+                    //connection.InsertarRegistro("insert into bitacora(id_usuario,fecha_bitacora,hora_bitacora,accion_usuario,id_aplicacion,resultado_bitacora,error_bitacora,ip_pc) values((select U.id_usuario from usuario U where U.usuario ='" + Globales.nom_usuario + "'), sysdate(), now(), '" + Globales.sAccionG + "', '" + app + "','" + Globales.sExitoso_n + "', '" + error_nuevo + "','" + localIP + "')");
+                    //connection.CloseConnection();
+                }
+                finally
+                {
+
+                }
+
+                bloqueados();
+            }
         }
 
 
@@ -299,10 +311,12 @@ namespace eLRNadminApp
 
                     bloqueados();
                     Btn_borrar.Enabled = true;
-                    Btn_ingresar.Enabled = false;
+                    Btn_ingresar.Enabled = true;
                     OdbcCommand sentencia = new OdbcCommand();
                     sentencia.Connection = conn;
-                    sentencia.CommandText = "select A.nombre_aplicacion from Detalle_aplicacion_derecho D, Aplicacion A where D.id_usuario = " + uid + " and A.id_aplicacion = D.id_aplicacion;";
+                    //sentencia.CommandText = "select A.nombre_aplicacion from Detalle_aplicacion_derecho D, Aplicacion A where D.id_usuario = " + uid + " and A.id_aplicacion in(D.id_aplicacion);";
+                    //sentencia.CommandText = "select A.nombre_aplicacion from Detalle_aplicacion_derecho D, Aplicacion A where D.id_usuario = " + uid + " ";
+                    sentencia.CommandText = "SELECT nombre_aplicacion from Aplicacion";
 
                     OdbcDataAdapter da1 = new OdbcDataAdapter(sentencia);
                     DataTable dt = new DataTable();
@@ -495,39 +509,43 @@ namespace eLRNadminApp
 
         private void Btn_borrar_Click(object sender, EventArgs e)
         {
-            String error_nuevo = ""; obtenerIP();
-            String app = "4";
-
-            try
+            if (Controlador.EvalSec.consultar("Permiso", Objeto.Common.SEC_ELIMINAR) == 1)
             {
-                OdbcCommand cmd = new OdbcCommand("delete from Detalle_aplicacion_derecho where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
+                String error_nuevo = ""; obtenerIP();
+                String app = "4";
 
-                int r;
-
-                r = cmd.ExecuteNonQuery();
-                //connection.OpenConnection();
-                //connection.InsertarRegistro("insert into bitacora(id_usuario,fecha_bitacora,hora_bitacora,accion_usuario,id_aplicacion,resultado_bitacora,error_bitacora,ip_pc) values((select U.id_usuario from usuario U where U.usuario ='" + Globales.nom_usuario + "'), sysdate(), now(), '" + Globales.sAccionD + "', '" + app + "','" + Globales.sExitoso + "', '" + Globales.sError + "','" + localIP + "')");
-                //connection.CloseConnection();
-
-                MessageBox.Show("Se ha Eliminado los privilegios en este Usuario!");
-                
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("No se puede borrar este dato!");
-                s_error = "." + ex.Message + ".";
-                String[] A = s_error.Split(new char[] { '\'' }, StringSplitOptions.RemoveEmptyEntries);
-                foreach (string i in A)
+                try
                 {
-                    error_nuevo += i;
+                    OdbcCommand cmd = new OdbcCommand("delete from Detalle_aplicacion_derecho where id_usuario = " + uid + " and id_aplicacion = " + aid + ";", conn);
+
+                    int r;
+
+                    r = cmd.ExecuteNonQuery();
+                    //connection.OpenConnection();
+                    //connection.InsertarRegistro("insert into bitacora(id_usuario,fecha_bitacora,hora_bitacora,accion_usuario,id_aplicacion,resultado_bitacora,error_bitacora,ip_pc) values((select U.id_usuario from usuario U where U.usuario ='" + Globales.nom_usuario + "'), sysdate(), now(), '" + Globales.sAccionD + "', '" + app + "','" + Globales.sExitoso + "', '" + Globales.sError + "','" + localIP + "')");
+                    //connection.CloseConnection();
+
+                    MessageBox.Show("Se ha Eliminado los privilegios en este Usuario!");
+
                 }
-                //connection.OpenConnection();
-                //connection.InsertarRegistro("insert into bitacora(id_usuario,fecha_bitacora,hora_bitacora,accion_usuario,id_aplicacion,resultado_bitacora,error_bitacora,ip_pc) values((select U.id_usuario from usuario U where U.usuario ='" + Globales.nom_usuario + "'), sysdate(), now(), '" + Globales.sAccionD + "', '" + app + "','" + Globales.sExitoso_n + "', '" + error_nuevo + "','" + localIP + "')");
-                //connection.CloseConnection();
-            }
-            finally {
-                cn.Close();
-                comboBox_app();
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("No se puede borrar este dato!");
+                    s_error = "." + ex.Message + ".";
+                    String[] A = s_error.Split(new char[] { '\'' }, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string i in A)
+                    {
+                        error_nuevo += i;
+                    }
+                    //connection.OpenConnection();
+                    //connection.InsertarRegistro("insert into bitacora(id_usuario,fecha_bitacora,hora_bitacora,accion_usuario,id_aplicacion,resultado_bitacora,error_bitacora,ip_pc) values((select U.id_usuario from usuario U where U.usuario ='" + Globales.nom_usuario + "'), sysdate(), now(), '" + Globales.sAccionD + "', '" + app + "','" + Globales.sExitoso_n + "', '" + error_nuevo + "','" + localIP + "')");
+                    //connection.CloseConnection();
+                }
+                finally
+                {
+                    cn.Close();
+                    comboBox_app();
+                }
             }
         }
 

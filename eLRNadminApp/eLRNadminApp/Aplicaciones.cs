@@ -16,6 +16,7 @@ namespace eLRNadminApp
     {
         private static int idApp = 3;
         public static int appId { get; }
+        private static string nomApp = "Aplicaciones";
 
         OdbcConnection conn = new Conexion().conexion();
         Conexion con = new Conexion();
@@ -23,6 +24,11 @@ namespace eLRNadminApp
         OdbcDataAdapter da;
         DataTable dt;
         OdbcDataReader dr;
+
+        public static string getNomApp()
+        {
+            return nomApp;
+        }
 
         public void Bloquear()
         {
@@ -51,66 +57,72 @@ namespace eLRNadminApp
 
         private void Btn_edit_Click(object sender, EventArgs e)
         {
-            try
+            if (Controlador.EvalSec.consultar("Aplicacion", Objeto.Common.SEC_EDITAR) == 1)
             {
-                
-                if (Chb_habilitar_aplicacion.Checked)
+                try
                 {
-                    txt_habilitar.Text = "1";
-                    
+
+                    if (Chb_habilitar_aplicacion.Checked)
+                    {
+                        txt_habilitar.Text = "1";
+
+                    }
+                    else
+                    {
+                        txt_habilitar.Text = "0";
+                    }
+
+
+                    com = new OdbcCommand("update aplicacion set nombre_aplicacion='" + txt_aplicacion.Text + "', descripcion_aplicacion='" + txt_aplicacion_descripcion.Text + "' , habilitar_aplicacion='" + txt_habilitar.Text + "', id_reporte='" + txt_no_reporte.Text + "'where id_aplicacion=" + Convert.ToInt32(this.var_aplicacion) + " ", con.conexion());
+                    com.ExecuteNonQuery();
+
+                    mostrar_aplicacion();
+                    txt_aplicacion.Text = "";
+                    txt_aplicacion_descripcion.Text = "";
+                    txt_no_reporte.Text = "";
+                    txt_habilitar.Text = "";
+                    MessageBox.Show("Datos actualizados");
                 }
-                else
+                catch (Exception ex)
                 {
-                    txt_habilitar.Text = "0";
+                    MessageBox.Show("Datos no actualizados");
                 }
-
-
-                com = new OdbcCommand("update aplicacion set nombre_aplicacion='" + txt_aplicacion.Text + "', descripcion_aplicacion='" + txt_aplicacion_descripcion.Text + "' , habilitar_aplicacion='" + txt_habilitar.Text + "', id_reporte='" + txt_no_reporte.Text + "'where id_aplicacion=" + Convert.ToInt32(this.var_aplicacion) + " ", con.conexion());
-                com.ExecuteNonQuery();
-
-                mostrar_aplicacion();
-                txt_aplicacion.Text = "";
-                txt_aplicacion_descripcion.Text = "";
-                txt_no_reporte.Text = "";
-                txt_habilitar.Text = "";
-                MessageBox.Show("Datos actualizados");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Datos no actualizados");
-            }
-
         }
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            try
+            if (Controlador.EvalSec.consultar("Aplicacion", Objeto.Common.SEC_INGRESAR) == 1)
             {
-                if (Chb_habilitar_aplicacion.Checked)
+                try
                 {
-                    txt_habilitar.Text = "1";
+                    if (Chb_habilitar_aplicacion.Checked)
+                    {
+                        txt_habilitar.Text = "1";
+
+                    }
+                    else
+                    {
+                        txt_habilitar.Text = "0";
+                    }
+
+                    com = new OdbcCommand("insert into aplicacion (nombre_aplicacion, descripcion_aplicacion, habilitar_aplicacion, id_reporte) values ('" + txt_aplicacion.Text + "', '" + txt_aplicacion_descripcion.Text + "', '" + txt_habilitar.Text + "', '" + txt_no_reporte.Text + "')", con.conexion());
+                    com.ExecuteNonQuery();
+
+                    MessageBox.Show("Datos Ingresados");
+                    mostrar_aplicacion();
+                    txt_aplicacion.Text = "";
+                    txt_aplicacion_descripcion.Text = "";
+                    txt_no_reporte.Text = "";
 
                 }
-                else
+                catch (Exception ex)
                 {
-                    txt_habilitar.Text = "0";
+                    MessageBox.Show("Error" + ex);
                 }
-
-                com = new OdbcCommand("insert into aplicacion (nombre_aplicacion, descripcion_aplicacion, habilitar_aplicacion, id_reporte) values ('" + txt_aplicacion.Text + "', '" + txt_aplicacion_descripcion.Text + "', '" + txt_habilitar.Text + "', '" + txt_no_reporte.Text + "')", con.conexion());
-                com.ExecuteNonQuery();
-
-                MessageBox.Show("Datos Ingresados");
-                mostrar_aplicacion();
-                txt_aplicacion.Text = "";
-                txt_aplicacion_descripcion.Text = "";
-                txt_no_reporte.Text = "";
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error" + ex);
             }
         }
+
         string var_aplicacion;
         private void dgv_aplicacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -211,7 +223,8 @@ namespace eLRNadminApp
 
         private void Btn_borrar_Click(object sender, EventArgs e)
         {
-            try
+            if (Controlador.EvalSec.consultar("Aplicacion", Objeto.Common.SEC_ELIMINAR) == 1)
+                try
             {
 
 
