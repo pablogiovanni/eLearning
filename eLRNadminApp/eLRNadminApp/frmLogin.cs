@@ -31,6 +31,11 @@ namespace eLRNadminApp
             Objeto.Common.dbPass = pass;
         }
 
+        public void setUsrNameFrm()
+        {
+            this.Text = "SISTEMA DE ELEARNING   USUARIO:["+Globales.nom_usuario+"]"+"    ID:["+Objeto.Common.idPLogin+"]";
+        }
+
         private void iniciarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login login_frm = new Login();
@@ -68,7 +73,7 @@ namespace eLRNadminApp
                 {
                     if (Objeto.Common.signedIn)
                     {
-                        frmPersonal frmPrn = new frmPersonal();
+                        frmPersonal frmPrn = new frmPersonal("Personal");
                         frmPrn.MdiParent = this;
                         frmPrn.Show();
                     }
@@ -90,7 +95,7 @@ namespace eLRNadminApp
                 try
                 {
                     if (Objeto.Common.signedIn) {
-                        frmAlumno frmAlu = new frmAlumno();
+                        frmPersonal frmAlu = new frmPersonal("Alumno");
                         frmAlu.MdiParent = this;
                         frmAlu.Show();
                     }
@@ -108,7 +113,7 @@ namespace eLRNadminApp
                 {
                     if (Objeto.Common.signedIn)
                     {
-                        frmCatedratico frmCat = new frmCatedratico();
+                        frmPersonal frmCat = new frmPersonal("Catedratico");
                         frmCat.MdiParent = this;
                         frmCat.Show();
                     }
@@ -190,6 +195,29 @@ namespace eLRNadminApp
                 }
             }catch(Exception ex) { MessageBox.Show(ex.Message); }
             Objeto.Common.setAclList();
+        }
+
+        private void tmr_loginFrm_Tick(object sender, EventArgs e)
+        {
+            setUsrNameFrm();
+        }
+
+        private void noticiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Controlador.EvalSec.consultar("Noticias", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                try
+                {
+                    if (Objeto.Common.signedIn)
+                    {
+                        Noticias frmNot = new Noticias();
+                        frmNot.MdiParent = this;
+                        frmNot.Show();
+                    }
+                }
+                catch (Exception ex) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular permisos!", "E-Learning"); }
         }
     }
 }

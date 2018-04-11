@@ -401,7 +401,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPersonal";
-            this.Text = "Mantenimiento de Personal General";
+            this.Text = "Mantenimiento de Personal General ";
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmEmpleados_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpB1.ResumeLayout(false);

@@ -73,53 +73,95 @@ namespace eLRNadminApp
 
         private void navegador1_RecibidorActualizar(object sender, EventArgs e)
         {
-            if (Controlador.EvalSec.consultar("Personal", Objeto.Common.SEC_EDITAR) == 1)
+            try
             {
-                try
+                if (rbtn_first.Checked)
                 {
                     if ((selectedCombo()) && (!emptyFields()))
-                        {
-                            //MessageBox.Show("Seleccionar elemento en ComboBox", "Registro de Personal");
-                            sNon = txtnom1.Text;
-                            sApe = txtnombre2.Text;
-                            sDir = txtDire.Text;
-                            string aux1 = dtP_1.Text;
-                            string dt1 = DateTime.Parse(aux1).ToString("yyyy/MM/dd");
-                            string aux2 = dtP_2.Text;
-                            string dt2 = DateTime.Parse(aux2).ToString("yyyy/MM/dd");
+                    {
+                        //MessageBox.Show("Seleccionar elemento en ComboBox", "Registro de Personal");
+                        sNon = txtnom1.Text;
+                        sApe = txtnombre2.Text;
+                        sDir = txtDire.Text;
+                        string aux1 = dtP_1.Text;
+                        string dt1 = DateTime.Parse(aux1).ToString("yyyy/MM/dd");
+                        string aux2 = dtP_2.Text;
+                        string dt2 = DateTime.Parse(aux2).ToString("yyyy/MM/dd");
 
-                            ArrayList listacampos = new ArrayList();
-                            //listacampos.Add("id_reg");
-                            listacampos.Add("nom_per");
-                            listacampos.Add("ape_per");
-                            listacampos.Add("dir_per");
-                            listacampos.Add("fecha_creado");
-                            listacampos.Add("fecha_nac");
-                            listacampos.Add("id_dept");
-                            listacampos.Add("id_pais");
-                            listacampos.Add("id_tipo");
+                        ArrayList listacampos = new ArrayList();
+                        //listacampos.Add("id_reg");
+                        listacampos.Add("nom_per");
+                        listacampos.Add("ape_per");
+                        listacampos.Add("dir_per");
+                        listacampos.Add("fecha_creado");
+                        listacampos.Add("fecha_nac");
+                        listacampos.Add("id_dept");
+                        listacampos.Add("id_pais");
+                        listacampos.Add("id_tipo");
 
-                            ArrayList listavalores = new ArrayList();
-                            //listavalores.Add(sIdReg);
-                            listavalores.Add(sNon);
-                            listavalores.Add(sApe);
-                            listavalores.Add(sDir);
-                            listavalores.Add(dt1);
-                            listavalores.Add(dt2);
-                            listavalores.Add(sDept);
-                            listavalores.Add(sPais);
-                            listavalores.Add(sPers);
+                        ArrayList listavalores = new ArrayList();
+                        listavalores.Add(sNon);
+                        listavalores.Add(sApe);
+                        listavalores.Add(sDir);
+                        listavalores.Add(dt1);
+                        listavalores.Add(dt2);
+                        listavalores.Add(sDept);
+                        listavalores.Add(sPais);
+                        listavalores.Add(sPers);
 
-                            Navegador.Utilidades.GeneradorSQL sqlGen = new Navegador.Utilidades.GeneradorSQL(Objeto.Common.dbServerIP, Objeto.Common.dbName, Objeto.Common.dbUser, Objeto.Common.dbPass, "personal_reg");
-                            sqlGen.setCodigoInstDML(2);
-                            sqlGen.setComparacion("id_per", iIdPer.ToString());
-                            sqlGen.setCampos(listacampos);
-                            sqlGen.setValores(listavalores);
-                            sqlGen.ejecutar();
-                        }else { MessageBox.Show("LLenar los campos y selecciones de datos para ingresar!", "E-Learning"); }
+                        Navegador.Utilidades.GeneradorSQL sqlGen = new Navegador.Utilidades.GeneradorSQL(Objeto.Common.dbServerIP, Objeto.Common.dbName, Objeto.Common.dbUser, Objeto.Common.dbPass, "personal_reg");
+                        sqlGen.setCodigoInstDML(2);
+                        sqlGen.setComparacion("id_per", iIdPer.ToString());
+                        sqlGen.setCampos(listacampos);
+                        sqlGen.setValores(listavalores);
+                        sqlGen.ejecutar();
+                    }
+                    else { MessageBox.Show("LLenar los campos y selecciones de datos para ingresar!", "E-Learning"); }
                 }
-                catch(Exception ex) { MessageBox.Show(ex.Message, "E-Learning"); }    
+
+                if (rbtn_second.Checked)
+                {
+                    if (!emptyTxtNum())
+                    {
+                        ArrayList listaCampos = new ArrayList();
+                        listaCampos.Add("id_tel");
+                        listaCampos.Add("area_code");
+
+                        ArrayList listaValores = new ArrayList();
+                        listaValores.Add(txt_area.Text);
+                        listaValores.Add(txt_num.Text);
+
+                        Navegador.Utilidades.GeneradorSQL sqlGen = new Navegador.Utilidades.GeneradorSQL(Objeto.Common.dbServerIP, Objeto.Common.dbName, Objeto.Common.dbUser, Objeto.Common.dbPass, "telefono");
+                        sqlGen.setCodigoInstDML(2);
+                        sqlGen.setComparacion("id_per", iIdPer.ToString());
+                        sqlGen.setCampos(listaCampos);
+                        sqlGen.setValores(listaValores);
+                        sqlGen.ejecutar();
+                    }
+                    else { MessageBox.Show("LLenar los campos para ingresar!", "E-Learning"); }
+                }
+
+                if (rbtn_second.Checked)
+                {
+                    if (!emptyTxtEmail())
+                    {
+                        ArrayList listaCampos = new ArrayList();
+                        listaCampos.Add("id_email");
+
+                        ArrayList listaValores = new ArrayList();
+                        listaValores.Add(txt_email.Text);
+
+                        Navegador.Utilidades.GeneradorSQL sqlGen = new Navegador.Utilidades.GeneradorSQL(Objeto.Common.dbServerIP, Objeto.Common.dbName, Objeto.Common.dbUser, Objeto.Common.dbPass, "email_reg");
+                        sqlGen.setCodigoInstDML(2);
+                        sqlGen.setComparacion("reg_id_per", iIdPer.ToString());
+                        sqlGen.setCampos(listaCampos);
+                        sqlGen.setValores(listaValores);
+                        sqlGen.ejecutar();
+                    }
+                    else { MessageBox.Show("LLenar los campos para ingresar!", "E-Learning"); }
+                }
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "E-Learning"); }
         }
 
         private void btn_tel_Click(object sender, EventArgs e)
@@ -268,7 +310,7 @@ namespace eLRNadminApp
 
                             ArrayList listValE = new ArrayList();
                             listValE.Add(sEmail);
-                            listValE.Add(sRegId);
+                            listValE.Add(iIdPer);
                             listValE.Add(sIdReg);
                         }
                     }
@@ -297,7 +339,7 @@ namespace eLRNadminApp
 
         private bool emptyTxtNum()
         {
-            if ((string.IsNullOrEmpty(txt_area.Text)) || (string.IsNullOrEmpty(txt_num.Text)) || (string.IsNullOrEmpty(sRegId)) || (iIdPer == 0))
+            if ((string.IsNullOrEmpty(txt_area.Text)) || (string.IsNullOrEmpty(txt_num.Text)) || (string.IsNullOrEmpty(sIdReg)) || (iIdPer == 0))
             {
                 return true;
             }
@@ -306,7 +348,7 @@ namespace eLRNadminApp
 
         private bool emptyTxtEmail()
         {
-            if ( (string.IsNullOrEmpty(txt_area.Text)) || (string.IsNullOrEmpty(lbl_perid.Text)) || (string.IsNullOrEmpty(sRegId)) || (iIdPer == 0) )
+            if ( (string.IsNullOrEmpty(txt_area.Text)) || (string.IsNullOrEmpty(lbl_perid.Text)) || (string.IsNullOrEmpty(sIdReg)) || (iIdPer == 0) )
             {
                 return true;
             }
@@ -458,10 +500,21 @@ namespace eLRNadminApp
 
         private void navegador1_RecibidorEliminar(object sender, EventArgs e)
         {
-            if (Controlador.EvalSec.consultar("Personal", Objeto.Common.SEC_ELIMINAR) == 1)
+            try
             {
+                ArrayList listaCampos = new ArrayList();
+                listaCampos.Add("estado");
+                ArrayList listaValores = new ArrayList();
+                listaValores.Add(0);
 
+                Navegador.Utilidades.GeneradorSQL sqlGen = new Navegador.Utilidades.GeneradorSQL(Objeto.Common.dbServerIP, Objeto.Common.dbName, Objeto.Common.dbUser, Objeto.Common.dbPass, "personal_reg");
+                sqlGen.setCodigoInstDML(2);
+                sqlGen.setComparacion("id_per", iIdPer.ToString());
+                sqlGen.setCampos(listaCampos);
+                sqlGen.setValores(listaValores);
+                sqlGen.ejecutar();
             }
+            catch (Exception ex) { }
         }
 
         private void navegador1_RecibidorAnterior(object sender, EventArgs e)
@@ -531,25 +584,27 @@ namespace eLRNadminApp
                 if (dataGridView1.Rows[e.RowIndex] != null)
                 {
                     clearComboBoxMailNum();
-                    sRegId = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                    sIdReg = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
                     iIdPer = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
                     txtnom1.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
                     txtnombre2.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
                     dtP_1.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
                     dtP_2.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
                     txtDire.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
-                    lbl_perid.Text = sRegId + iIdPer;
+                    lbl_perid.Text = sIdReg + iIdPer;
                     getNumAndEmail();
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message+ex.Source); }
         }
 
-        public frmPersonal()
+        public frmPersonal(string stAppNom)
         {
             InitializeComponent();
+            navegador1.setSecProfile(stAppNom);
+            nomApp = stAppNom;
             getPersonalData();
-            navegador1.setSecProfile(nomApp);
+            //this.Text = "Mantenimiento de Personal General  USUARIO:["+Globales.nom_usuario+"]";
             //blockTxt();
         }
 
@@ -559,6 +614,9 @@ namespace eLRNadminApp
             {
                 cmb_email.Items.Clear();
                 cmb_num.Items.Clear();
+                lEmail.Clear();
+                lNum.Clear();
+                
             }
         }
         
