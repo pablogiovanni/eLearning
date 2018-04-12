@@ -217,7 +217,25 @@ namespace eLRNadminApp
                 }
                 catch (Exception ex) { }
             }
-            else { MessageBox.Show("Usuario sin privilegios para consular permisos!", "E-Learning"); }
+            else { MessageBox.Show("Usuario sin privilegios para consular noticias!", "E-Learning"); }
+        }
+
+        private void facultadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Controlador.EvalSec.consultar("Facultad", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                try
+                {
+                    if (Objeto.Common.signedIn)
+                    {
+                        frmAgregarFacultad frmFac = new frmAgregarFacultad();
+                        frmFac.MdiParent = this;
+                        frmFac.Show();
+                    }
+                }
+                catch (Exception ex) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular facultades!", "E-Learning"); }
         }
     }
 }

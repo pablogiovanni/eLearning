@@ -41,9 +41,10 @@
             this.académicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catedráticosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noticiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_loginFrm = new System.Windows.Forms.Timer(this.components);
-            this.noticiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facultadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,28 +100,28 @@
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.personalToolStripMenuItem.Text = "Personal";
             this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // permisosToolStripMenuItem
             // 
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
-            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.permisosToolStripMenuItem.Text = "Permisos";
             this.permisosToolStripMenuItem.Click += new System.EventHandler(this.permisosToolStripMenuItem_Click);
             // 
             // aplicacionesToolStripMenuItem
             // 
             this.aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
-            this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.aplicacionesToolStripMenuItem.Text = "Aplicaciones";
             this.aplicacionesToolStripMenuItem.Click += new System.EventHandler(this.aplicacionesToolStripMenuItem_Click);
             // 
@@ -129,7 +130,8 @@
             this.académicoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.catedráticosToolStripMenuItem,
             this.alumnosToolStripMenuItem,
-            this.noticiasToolStripMenuItem});
+            this.noticiasToolStripMenuItem,
+            this.facultadesToolStripMenuItem});
             this.académicoToolStripMenuItem.Name = "académicoToolStripMenuItem";
             this.académicoToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.académicoToolStripMenuItem.Text = "Académico";
@@ -148,6 +150,13 @@
             this.alumnosToolStripMenuItem.Text = "Alumnos";
             this.alumnosToolStripMenuItem.Click += new System.EventHandler(this.alumnosToolStripMenuItem_Click);
             // 
+            // noticiasToolStripMenuItem
+            // 
+            this.noticiasToolStripMenuItem.Name = "noticiasToolStripMenuItem";
+            this.noticiasToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.noticiasToolStripMenuItem.Text = "Noticias";
+            this.noticiasToolStripMenuItem.Click += new System.EventHandler(this.noticiasToolStripMenuItem_Click);
+            // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
@@ -161,12 +170,12 @@
             this.tmr_loginFrm.Interval = 1000;
             this.tmr_loginFrm.Tick += new System.EventHandler(this.tmr_loginFrm_Tick);
             // 
-            // noticiasToolStripMenuItem
+            // facultadesToolStripMenuItem
             // 
-            this.noticiasToolStripMenuItem.Name = "noticiasToolStripMenuItem";
-            this.noticiasToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.noticiasToolStripMenuItem.Text = "Noticias";
-            this.noticiasToolStripMenuItem.Click += new System.EventHandler(this.noticiasToolStripMenuItem_Click);
+            this.facultadesToolStripMenuItem.Name = "facultadesToolStripMenuItem";
+            this.facultadesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.facultadesToolStripMenuItem.Text = "Facultades";
+            this.facultadesToolStripMenuItem.Click += new System.EventHandler(this.facultadesToolStripMenuItem_Click);
             // 
             // frm_init
             // 
@@ -204,6 +213,7 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.Timer tmr_loginFrm;
         private System.Windows.Forms.ToolStripMenuItem noticiasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facultadesToolStripMenuItem;
     }
 }
 

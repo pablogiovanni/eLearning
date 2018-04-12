@@ -63,6 +63,24 @@
       <DependentUpon>Aplicaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Controlador\EvalSec.cs" />
+    <Compile Include="frmAgregarCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarCarrera.Designer.cs">
+      <DependentUpon>frmAgregarCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarCursos.designer.cs">
+      <DependentUpon>frmAgregarCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarFacultad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarFacultad.Designer.cs">
+      <DependentUpon>frmAgregarFacultad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCatedratico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +155,15 @@
     </Compile>
     <EmbeddedResource Include="Aplicaciones.resx">
       <DependentUpon>Aplicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarCarrera.resx">
+      <DependentUpon>frmAgregarCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarCursos.resx">
+      <DependentUpon>frmAgregarCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarFacultad.resx">
+      <DependentUpon>frmAgregarFacultad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCatedratico.resx">
       <DependentUpon>frmCatedratico.cs</DependentUpon>
