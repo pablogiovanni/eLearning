@@ -42,9 +42,13 @@
             this.catedráticosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noticiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facultadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puntosActividadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.horariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_loginFrm = new System.Windows.Forms.Timer(this.components);
-            this.facultadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.carrerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,7 +135,11 @@
             this.catedráticosToolStripMenuItem,
             this.alumnosToolStripMenuItem,
             this.noticiasToolStripMenuItem,
-            this.facultadesToolStripMenuItem});
+            this.facultadesToolStripMenuItem,
+            this.puntosActividadesToolStripMenuItem,
+            this.horariosToolStripMenuItem,
+            this.carrerasToolStripMenuItem,
+            this.cursosToolStripMenuItem});
             this.académicoToolStripMenuItem.Name = "académicoToolStripMenuItem";
             this.académicoToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.académicoToolStripMenuItem.Text = "Académico";
@@ -139,23 +147,44 @@
             // catedráticosToolStripMenuItem
             // 
             this.catedráticosToolStripMenuItem.Name = "catedráticosToolStripMenuItem";
-            this.catedráticosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.catedráticosToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.catedráticosToolStripMenuItem.Text = "Catedráticos";
             this.catedráticosToolStripMenuItem.Click += new System.EventHandler(this.catedráticosToolStripMenuItem_Click);
             // 
             // alumnosToolStripMenuItem
             // 
             this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
-            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.alumnosToolStripMenuItem.Text = "Alumnos";
             this.alumnosToolStripMenuItem.Click += new System.EventHandler(this.alumnosToolStripMenuItem_Click);
             // 
             // noticiasToolStripMenuItem
             // 
             this.noticiasToolStripMenuItem.Name = "noticiasToolStripMenuItem";
-            this.noticiasToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.noticiasToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.noticiasToolStripMenuItem.Text = "Noticias";
             this.noticiasToolStripMenuItem.Click += new System.EventHandler(this.noticiasToolStripMenuItem_Click);
+            // 
+            // facultadesToolStripMenuItem
+            // 
+            this.facultadesToolStripMenuItem.Name = "facultadesToolStripMenuItem";
+            this.facultadesToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.facultadesToolStripMenuItem.Text = "Facultades";
+            this.facultadesToolStripMenuItem.Click += new System.EventHandler(this.facultadesToolStripMenuItem_Click);
+            // 
+            // puntosActividadesToolStripMenuItem
+            // 
+            this.puntosActividadesToolStripMenuItem.Name = "puntosActividadesToolStripMenuItem";
+            this.puntosActividadesToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.puntosActividadesToolStripMenuItem.Text = "Puntos&Actividades";
+            this.puntosActividadesToolStripMenuItem.Click += new System.EventHandler(this.puntosActividadesToolStripMenuItem_Click);
+            // 
+            // horariosToolStripMenuItem
+            // 
+            this.horariosToolStripMenuItem.Name = "horariosToolStripMenuItem";
+            this.horariosToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.horariosToolStripMenuItem.Text = "Horarios";
+            this.horariosToolStripMenuItem.Click += new System.EventHandler(this.horariosToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -170,12 +199,19 @@
             this.tmr_loginFrm.Interval = 1000;
             this.tmr_loginFrm.Tick += new System.EventHandler(this.tmr_loginFrm_Tick);
             // 
-            // facultadesToolStripMenuItem
+            // carrerasToolStripMenuItem
             // 
-            this.facultadesToolStripMenuItem.Name = "facultadesToolStripMenuItem";
-            this.facultadesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.facultadesToolStripMenuItem.Text = "Facultades";
-            this.facultadesToolStripMenuItem.Click += new System.EventHandler(this.facultadesToolStripMenuItem_Click);
+            this.carrerasToolStripMenuItem.Name = "carrerasToolStripMenuItem";
+            this.carrerasToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.carrerasToolStripMenuItem.Text = "Carreras";
+            this.carrerasToolStripMenuItem.Click += new System.EventHandler(this.carrerasToolStripMenuItem_Click);
+            // 
+            // cursosToolStripMenuItem
+            // 
+            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.cursosToolStripMenuItem.Text = "Cursos";
+            this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
             // frm_init
             // 
@@ -214,6 +250,10 @@
         private System.Windows.Forms.Timer tmr_loginFrm;
         private System.Windows.Forms.ToolStripMenuItem noticiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facultadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem puntosActividadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem horariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carrerasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
     }
 }
 

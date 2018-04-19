@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="actividadesnota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="actividadesnota.designer.cs">
+      <DependentUpon>actividadesnota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Aplicaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,12 @@
     <Compile Include="frmAlumno.Designer.cs">
       <DependentUpon>frmAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmhorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmhorarios.designer.cs">
+      <DependentUpon>frmhorarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,12 @@
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ingresonotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ingresonotas.designer.cs">
+      <DependentUpon>ingresonotas.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -138,6 +156,7 @@
       <DependentUpon>Noticias.cs</DependentUpon>
     </Compile>
     <Compile Include="Objeto\AclUser.cs" />
+    <Compile Include="Objeto\Curso.cs" />
     <Compile Include="Objeto\dbAccess.cs" />
     <Compile Include="Objeto\Departamentos.cs" />
     <Compile Include="Objeto\Email.cs" />
@@ -153,6 +172,9 @@
     <Compile Include="Usuarios.designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="actividadesnota.resx">
+      <DependentUpon>actividadesnota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Aplicaciones.resx">
       <DependentUpon>Aplicaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,11 +193,17 @@
     <EmbeddedResource Include="frmAlumno.resx">
       <DependentUpon>frmAlumno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmhorarios.resx">
+      <DependentUpon>frmhorarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPersonal.resx">
       <DependentUpon>frmPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ingresonotas.resx">
+      <DependentUpon>ingresonotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

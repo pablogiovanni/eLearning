@@ -237,5 +237,77 @@ namespace eLRNadminApp
             }
             else { MessageBox.Show("Usuario sin privilegios para consular facultades!", "E-Learning"); }
         }
+
+        private void puntosActividadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Controlador.EvalSec.consultar("ElementosDeNotas", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                try
+                {
+                    if (Objeto.Common.signedIn)
+                    {
+                        actividadesnota frmAct = new actividadesnota();
+                        frmAct.MdiParent = this;
+                        frmAct.Show();
+                    }
+                }
+                catch (Exception ex) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular actividades!", "E-Learning"); }
+        }
+
+        private void horariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Controlador.EvalSec.consultar("Horario", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                try
+                {
+                    if (Objeto.Common.signedIn)
+                    {
+                        actividadesnota frmAct = new actividadesnota();
+                        frmAct.MdiParent = this;
+                        frmAct.Show();
+                    }
+                }
+                catch (Exception ex) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular actividades!", "E-Learning"); }
+        }
+
+        private void carrerasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Controlador.EvalSec.consultar("Carrera", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                try
+                {
+                    if (Objeto.Common.signedIn)
+                    {
+                        frmAgregarCarrera frmCar = new frmAgregarCarrera();
+                        frmCar.MdiParent = this;
+                        frmCar.Show();
+                    }
+                }
+                catch (Exception ex) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular carreras!", "E-Learning"); }
+        }
+
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Controlador.EvalSec.consultar("Curso", Objeto.Common.SEC_CONSULTAR) == 1)
+            {
+                try
+                {
+                    if (Objeto.Common.signedIn)
+                    {
+                        frmAgregarCursos frmCur = new frmAgregarCursos();
+                        frmCur.MdiParent = this;
+                        frmCur.Show();
+                    }
+                }
+                catch (Exception ex) { }
+            }
+            else { MessageBox.Show("Usuario sin privilegios para consular cursos!", "E-Learning"); }
+        }
     }
 }

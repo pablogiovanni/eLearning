@@ -58,3 +58,10 @@ C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\o
 C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.exe
 C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.pdb
 C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.Noticias.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmAgregarCarrera.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmAgregarCursos.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmAgregarFacultad.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.actividadesnota.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.ingresonotas.resources
+C:\Users\usuario\Documents\Repos\eLearning\eLearning\eLRNadminApp\eLRNadminApp\obj\Debug\eLRNadminApp.frmhorarios.resources

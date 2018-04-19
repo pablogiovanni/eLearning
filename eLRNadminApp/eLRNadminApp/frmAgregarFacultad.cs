@@ -37,8 +37,8 @@ namespace eLRNadminApp
         private void  llenarFacultad()
         {
             // LLenar datagridview con las noticias existentes
-            String qString = @"select id_fac, nom_fac, descrip_fac from facultad where estado = 1";
-
+            String qString = @"select id_fac, nom_fac, descrip_fac from facultad where estado = 1 ";
+        
             if (Controlador.EvalSec.consultar(nomApp, Objeto.Common.SEC_CONSULTAR) == 1)
             {
                 dgvFacultad.DataSource = Objeto.dbAccess.selectQ(qString);
@@ -196,7 +196,7 @@ namespace eLRNadminApp
                 {
 
                     ArrayList listaCampos = new ArrayList();
-                    listaCampos.Add("nombre_fac");
+                    listaCampos.Add("nom_fac");
                     listaCampos.Add("descrip_fac");
                    
 
@@ -215,6 +215,11 @@ namespace eLRNadminApp
                 else { MessageBox.Show("Llenar los campos de texto!", "E-Learning"); }
             }
             catch (Exception ex) { }
+        }
+
+        private void frmAgregarFacultad_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

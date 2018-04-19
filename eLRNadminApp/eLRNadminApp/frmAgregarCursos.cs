@@ -20,7 +20,8 @@ namespace eLRNadminApp
         {
 
             InitializeComponent();
-            e();
+                 navegador1.setSecProfile(nomApp); // se envía parametro de nombre de aplicacion a la barra de navegacion
+           // e();
         }
         int indiceFacultad;
         int indiceCarrera;
